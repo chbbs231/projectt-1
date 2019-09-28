@@ -1,21 +1,41 @@
 .navbar-brand {
-    x: 6px;
-    y: 33px;
     width: 1330px;
-    height: 49px;
+    height: 75px;
     background: #6EA4BF;
     border: none;
     border-radius: 11px;
     text-align: center
     }
-
+ .Button {
+        width: 93px;
+        height: 23px;
+        color: #FFFFFF;
+        font-family: Arimo;
+        font-size: 15px;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        background: rgba(224,224,224,0);
+        border: 3px solid #FFFFFF;
+        border-radius: 12px;
+        }
 #subnav {
-    x: 8px;
-    y: 81.67355727820845px;
-    width: 1328px;
-    height: 169px;
+    width: 1330px;
+    height: 75px;
     background: #E0E0E0;
     border: none;
     border-radius: 10px;
     }
+img{height: 300px;
+width: 50px;}
 
+#cardpics {height: 100px;
+width: 100px;
+}
+
+.card-body{
+    height: 140px;
+
+}
+#search{ float: right;}
