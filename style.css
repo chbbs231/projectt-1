@@ -1,0 +1,21 @@
+.navbar-brand {
+    x: 6px;
+    y: 33px;
+    width: 1330px;
+    height: 49px;
+    background: #6EA4BF;
+    border: none;
+    border-radius: 11px;
+    text-align: center
+    }
+
+#subnav {
+    x: 8px;
+    y: 81.67355727820845px;
+    width: 1328px;
+    height: 169px;
+    background: #E0E0E0;
+    border: none;
+    border-radius: 10px;
+    }
+
