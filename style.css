@@ -28,14 +28,17 @@
     border-radius: 10px;
     }
 img{height: 300px;
-width: 50px;}
+width: 50px;
+padding-bottom: 10px}
 
-#cardpics {height: 100px;
-width: 100px;
+.cardpics {height: 120px;
+width: 150px;
+padding-top: 30px;
+padding-left: 10px;
 }
 
-.card-body{
+.nexcar{
     height: 140px;
-
+border: 1px
 }
 #search{ float: right;}
