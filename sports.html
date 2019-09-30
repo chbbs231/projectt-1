@@ -18,11 +18,17 @@
 
 <body>
   <!-- navBar -->
-<nav class="navbar navbar-light justify-content-center navColor">
-  <span class="navbar-brand mb-0 h1 text-white"><h1>BAM</h1></span>
-</nav>
+  <div class="row p-2 navColor">
+    <div class="col-11 ">
+      <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
+    </div>
+    <div class="col-1">
+  <button type="button" class="btn btn-outline-light mt-1">Sign In</button>
+    </div>
+  </div>
+
 <!-- subNav -->
-<ul class="nav justify-content-center subNav">
+<ul class="nav justify-content-center subNav p-2">
   <li class="nav-item">
     <a class="nav-link active" href="#">Home</a>
   </li>
@@ -38,21 +44,31 @@
 </ul>
 <!-- Seach bar -->
 <div class="bg-secondary p-5">
-<div class="container mt-3">
-  <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 w-50">
-    <div class="input-group ml-1">
-      <input type="search" placeholder="search" aria-describedby="searchBtn"
-        class="form-control border-0 bg-light">
-      <div class="input-group-append">
-        <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+  <div class="container mt-3 mr-5">
+    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 w-50">
+      <div class="input-group ml-1">
+        <input type="search" placeholder="search" aria-describedby="searchBtn"
+          class="form-control border-0 bg-light">
+        <div class="input-group-append">
+          <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Article Cards -->
+<div class="container">
+<div class="card mb-3 mt-3">
+  <img src="./assets/images/image-placeholder-1200x800.jpg" class="card-img-top" style="height: 300px;" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+      This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
 </div>
-
-
-
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
