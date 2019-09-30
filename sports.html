@@ -20,21 +20,21 @@
 <body>
   <!-- navBar -->
   <div class="row p-2 navColor">
-    <div class="col-11 ">
+    <div class="col-9  col-md-11">
       <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
     </div>
-    <div class="col-1">
-      <button type="button" class="btn btn-outline-light mt-1" data-toggle="modal" data-target="#signInModal">Sign
-        In</button>
+    <div class="col-3 col-md-1">
+      <button type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+        data-target="#signInModal">Login</button>
     </div>
   </div>
-  <!-- Sign In Modal -->
+  <!-- login Modal -->
   <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="signInModalTitle">Sign In</h4>
+          <h4 class="modal-title" id="signInModalTitle">Login</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -80,8 +80,8 @@
 
   <!-- Seach bar -->
   <div class="row p-5 bg-secondary">
-    <div class="col-4 bg-secondary"></div>
-    <div class="col-4 bg-secondary">
+    <div class="col-2 col-md-4 bg-secondary"></div>
+    <div class="col-8 col-md-4 bg-secondary">
       <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
         <div class="input-group ml-1">
           <input type="search" placeholder="search" aria-describedby="searchBtn" class="form-control border-0 bg-light">
@@ -91,23 +91,97 @@
         </div>
       </div>
     </div>
-    <div class="col-4 bg-secondary"></div>
+    <div class="col-2 col-md-4 bg-secondary"></div>
   </div>
 
 
   <!-- Article Cards -->
-  <div class="container">
-    <div class="card mb-3 mt-3">
-      <img src="./assets/images/image-placeholder-1200x800.jpg" class="card-img-top" style="height: 300px;" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-          This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-3">
+        <div class="card border-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+          </div>
+        </div>
+        <div class="card border-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="card mb-3">
+            <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content.
+                This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card  border-light text-dark mb-3" style="max-width: 18rem;">
+          <div class="card-header">Top Headlines</div>
+          <div class="card-body">
+            <h5 class="card-title"> card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-deck">
+        <div class="card">
+          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content.
+              This content is a little bit longer.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content.
+              This card has even longer content than the first to show that equal height action.</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
