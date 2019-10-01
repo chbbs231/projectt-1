@@ -1,0 +1,16 @@
+(function(){
+  window['optimizely'] = window['optimizely'] || [];
+  window['optimizely'].push(['activateGeoDelayedExperiments', {
+    'location':{
+      'city': "RIVERSIDE",
+      'continent': "NA",
+      'country': "US",
+      'region': "CA"
+    },
+    'ip':"96.40.184.241"
+  }]);
+})
+//
+()
+
+;

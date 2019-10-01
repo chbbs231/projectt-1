@@ -1,0 +1,794 @@
+(function (cjs, an) {
+
+var p; // shortcut to reference prototypes
+var lib={};var ss={};var img={};
+lib.webFontTxtInst = {}; 
+var loadedTypekitCount = 0;
+var loadedGoogleCount = 0;
+var gFontsUpdateCacheList = [];
+var tFontsUpdateCacheList = [];
+lib.ssMetadata = [
+		{name:"1600x500_Volvo_V1_atlas_", frames: [[0,0,40,40],[0,42,40,40],[0,84,40,40],[42,0,40,40],[42,42,40,40]]}
+];
+
+
+
+lib.updateListCache = function (cacheList) {		
+	for(var i = 0; i < cacheList.length; i++) {		
+		if(cacheList[i].cacheCanvas)		
+			cacheList[i].updateCache();		
+	}		
+};		
+
+lib.addElementsToCache = function (textInst, cacheList) {		
+	var cur = textInst;		
+	while(cur != null && cur != exportRoot) {		
+		if(cacheList.indexOf(cur) != -1)		
+			break;		
+		cur = cur.parent;		
+	}		
+	if(cur != exportRoot) {		
+		var cur2 = textInst;		
+		var index = cacheList.indexOf(cur);		
+		while(cur2 != null && cur2 != cur) {		
+			cacheList.splice(index, 0, cur2);		
+			cur2 = cur2.parent;		
+			index++;		
+		}		
+	}		
+	else {		
+		cur = textInst;		
+		while(cur != null && cur != exportRoot) {		
+			cacheList.push(cur);		
+			cur = cur.parent;		
+		}		
+	}		
+};		
+
+lib.gfontAvailable = function(family, totalGoogleCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], gFontsUpdateCacheList);		
+
+	loadedGoogleCount++;		
+	if(loadedGoogleCount == totalGoogleCount) {		
+		lib.updateListCache(gFontsUpdateCacheList);		
+	}		
+};		
+
+lib.tfontAvailable = function(family, totalTypekitCount) {		
+	lib.properties.webfonts[family] = true;		
+	var txtInst = lib.webFontTxtInst && lib.webFontTxtInst[family] || [];		
+	for(var f = 0; f < txtInst.length; ++f)		
+		lib.addElementsToCache(txtInst[f], tFontsUpdateCacheList);		
+
+	loadedTypekitCount++;		
+	if(loadedTypekitCount == totalTypekitCount) {		
+		lib.updateListCache(tFontsUpdateCacheList);		
+	}		
+};
+// symbols:
+
+
+
+(lib.mute40 = function() {
+	this.spriteSheet = ss["1600x500_Volvo_V1_atlas_"];
+	this.gotoAndStop(0);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.pause40 = function() {
+	this.spriteSheet = ss["1600x500_Volvo_V1_atlas_"];
+	this.gotoAndStop(1);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.play40 = function() {
+	this.spriteSheet = ss["1600x500_Volvo_V1_atlas_"];
+	this.gotoAndStop(2);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.replay40 = function() {
+	this.spriteSheet = ss["1600x500_Volvo_V1_atlas_"];
+	this.gotoAndStop(3);
+}).prototype = p = new cjs.Sprite();
+
+
+
+(lib.unmute40 = function() {
+	this.spriteSheet = ss["1600x500_Volvo_V1_atlas_"];
+	this.gotoAndStop(4);
+}).prototype = p = new cjs.Sprite();
+// helper functions:
+
+function mc_symbol_clone() {
+	var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+	clone.gotoAndStop(this.currentFrame);
+	clone.paused = this.paused;
+	clone.framerate = this.framerate;
+	return clone;
+}
+
+function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+	var prototype = cjs.extend(symbol, cjs.MovieClip);
+	prototype.clone = mc_symbol_clone;
+	prototype.nominalBounds = nominalBounds;
+	prototype.frameBounds = frameBounds;
+	return prototype;
+	}
+
+
+(lib.an_Video = function(options) {
+	this._element = new $.an.Video(options);
+	this._el = this._element.create();
+	var $this = this;
+	this.addEventListener('added', function() {
+		$this._lastAddedFrame = $this.parent.currentFrame;
+		$this._element.attach($('#dom_overlay_container'));
+	});
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,400,300);
+
+p._tick = _tick;
+p._handleDrawEnd = _handleDrawEnd;
+p._updateVisibility = _updateVisibility;
+
+
+
+(lib.unmute40_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.mute40();
+	this.instance.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.unmute40_1, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.replay40_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.replay40();
+	this.instance.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.replay40_1, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.PressBtn = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#000033").s().p("ArjD6Qg8AAAAg8IAAl7QAAg8A8AAIXHAAQA8AAAAA8IAAF7QAAA8g8AAg");
+	this.shape.setTransform(20,20,0.25,0.8);
+	this.shape._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3).to({_off:false},0).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = null;
+
+
+(lib.play40_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.play40();
+	this.instance.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.play40_1, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.paue40 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.pause40();
+	this.instance.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.paue40, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.mute40_1 = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.instance = new lib.unmute40();
+	this.instance.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.mute40_1, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.an_Image = function(options) {
+	this._element = new $.an.Image(options);
+	this._el = this._element.create();
+	var $this = this;
+	this.addEventListener('added', function() {
+		$this._lastAddedFrame = $this.parent.currentFrame;
+		$this._element.attach($('#dom_overlay_container'));
+	});
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,100,100);
+
+p._tick = _tick;
+p._handleDrawEnd = _handleDrawEnd;
+p._updateVisibility = _updateVisibility;
+
+
+
+(lib.hotspot = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// Layer_1
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f("#000000").s().dr(-800,-250,1600,500);
+	this.shape.setTransform(800,250);
+	this.shape._off = true;
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(3).to({_off:false},0).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = null;
+
+
+(lib.unmute_visual = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// unmute40.png
+	this.instance = new lib.mute40_1();
+	this.instance.parent = this;
+	this.instance.setTransform(20,20,1,1,0,0,0,20,20);
+	this.instance.alpha = 0.852;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.unmute_visual, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.replayBtn = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// replay40.png
+	this.instance = new lib.replay40_1();
+	this.instance.parent = this;
+	this.instance.setTransform(20,20,1,1,0,0,0,20,20);
+	this.instance.alpha = 0.852;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.replayBtn, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.playGraphic = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// play40.png
+	this.instance = new lib.play40_1();
+	this.instance.parent = this;
+	this.instance.setTransform(20,20,1,1,0,0,0,20,20);
+	this.instance.alpha = 0.852;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.playGraphic, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.pauseGraphic = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// pause40.png
+	this.instance = new lib.paue40();
+	this.instance.parent = this;
+	this.instance.setTransform(20,20,1,1,0,0,0,20,20);
+	this.instance.alpha = 0.852;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.pauseGraphic, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.mute_visual = function(mode,startPosition,loop) {
+	this.initialize(mode,startPosition,loop,{});
+
+	// mute40.png
+	this.instance = new lib.unmute40_1();
+	this.instance.parent = this;
+	this.instance.setTransform(20,20,1,1,0,0,0,20,20);
+	this.instance.alpha = 0.852;
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.mute_visual, new cjs.Rectangle(0,0,40,40), null);
+
+
+(lib.mainstage = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		/* ON LOAD.*/
+		window.pauseBtn_visual = this.pauseBtn_visual;
+		window.unmuteBtn_visual = this.unmuteBtn_visual;
+		window.muteBtn_visual = this.muteBtn_visual;
+		window.playBtn_visual = this.playBtn_visual;
+		window.replayBtn_visual = this.replayBtn_visual;
+		window.pauseBtn = this.pauseBtn;
+		window.playBtn = this.playBtn;
+		
+		this.muteBtn.visible = false;
+		this.muteBtn_visual.visible = false;
+		this.playBtn.visible = false;
+		this.playBtn_visual.visible = false;
+		
+		/* Hidden on Load.*/
+		this.endCard.on("added", function() {
+			$("#endCard")[0].style.opacity = "0";
+		}, this, true);
+		
+		/* Mutes the Video on Load.*/
+		this.myVideo.on("added", function() {
+		    $("#myVideo")[0].muted = true;
+		}, this, true);
+		
+		/* On Replay.*/
+		this.myVideo.on("added", function() {
+			$("#myVideo").on("play",function() {
+				$("#endCard").animate({"opacity": "0"}, 900);
+				createjs.Tween.get(pauseBtn_visual).to({alpha:1}, 1000);
+				createjs.Tween.get(unmuteBtn_visual).to({alpha:1}, 1000);
+				createjs.Tween.get(muteBtn_visual).to({alpha:1}, 1000);
+				createjs.Tween.get(replayBtn_visual).to({alpha:0});
+			});
+		});
+		
+		/* Hides the End Card on Replay.*/
+		this.playBtn.on("added", function() {
+			$("#myVideo").on("play",function() {
+				$("#endCard").animate({"opacity": "0"}, 500);
+			});
+		});
+		
+		/* CANVAS ELEMENTS.*/
+		
+		/* PLAY BUTTON CLICK.*/
+		/* This function Plays the video on click.*/
+		this.playBtn.addEventListener("click", fl_MouseClickHandler.bind(this));
+		
+		function fl_MouseClickHandler() 
+		{
+				$("#myVideo")[0].play(); 
+		}
+				
+		/*Hides the play button on click.*/
+		this.playBtn.addEventListener("click", fl_ClickToHide.bind(this));
+		
+		function fl_ClickToHide() 
+		{
+				this.playBtn.visible = false; 
+		}
+		
+		/*Hides the play Graphic on click.*/
+		this.playBtn.addEventListener("click", fl_ClickToHide_playGraphic.bind(this));
+		
+		function fl_ClickToHide_playGraphic() 
+		{
+				this.playBtn_visual.visible = false; 
+		}
+		
+		
+		/* Shows the Pause button on click.*/
+		this.playBtn.addEventListener("click", fl_ClickToShow.bind(this));
+		
+		function fl_ClickToShow() 
+		{	
+			this.pauseBtn.visible = true; 
+		}
+		
+		/* Shows the Pause Graphic on click.*/
+		this.playBtn.addEventListener("click", fl_ClickToShow_pauseGraphic.bind(this));
+		
+		function fl_ClickToShow_pauseGraphic() 
+		{	
+			this.pauseBtn_visual.visible = true; 
+		}
+		
+			
+		/* PAUSE BUTTON CLICK.*/
+		
+		/* This function Pauses the video on click.*/
+		this.pauseBtn.addEventListener("click", fl_MouseClickHandler_2.bind(this), );
+		
+		function fl_MouseClickHandler_2() 
+		{
+			$("#myVideo")[0].pause(); 
+		}
+			
+			
+		/* Hides the pause button on click.*/
+		this.pauseBtn.addEventListener("click", fl_ClickToHide_2.bind(this));
+		
+		function fl_ClickToHide_2() 
+		{
+			this.pauseBtn.visible = false; 
+		}
+		
+		/* Hides the pause Graphic on click.*/	
+		this.pauseBtn.addEventListener("click", fl_ClickToHide_pauseGraphic_2.bind(this));
+		
+		function fl_ClickToHide_pauseGraphic_2() 
+		{
+			this.pauseBtn_visual.visible = false; 
+		}
+			
+		/* Shows the play button on click.*/
+		this.pauseBtn.addEventListener("click", fl_ClickToShow_2.bind(this));
+		
+		function fl_ClickToShow_2() 
+		{
+			this.playBtn.visible = true; 
+		}
+		
+		/* Shows the play graphic on click.*/
+		this.pauseBtn.addEventListener("click", fl_ClickToShow_playGraphic_2.bind(this));
+		
+		function fl_ClickToShow_playGraphic_2() 
+		{
+			this.playBtn_visual.visible = true; 
+		}
+		
+		
+		/* MUTE BUTTON CLICK.*/
+		
+		/* This function Mutes the video on click.*/
+		this.muteBtn.addEventListener("click", fl_MouseClickHandler_3.bind(this));
+		
+		function fl_MouseClickHandler_3()
+		{
+			
+		$("#myVideo")[0].muted = true;
+			
+		}
+		
+		/* Hides the Mute button on click.*/
+		this.muteBtn.addEventListener("click", fl_ClickToHide_Mute.bind(this));
+		
+		function fl_ClickToHide_Mute() 
+		{
+			this.muteBtn.visible = false; 
+		}
+		
+		/*Hides the Mute Graphic on click.*/
+		this.muteBtn.addEventListener("click", fl_ClickToHide_MuteGraphic.bind(this));
+		
+		function fl_ClickToHide_MuteGraphic() 
+		{
+				this.muteBtn_visual.visible = false; 
+		}
+		
+		/* Shows the Unmute button on click.*/
+		this.muteBtn.addEventListener("click", fl_ClickToShowUnmute.bind(this));
+		
+		function fl_ClickToShowUnmute() 
+		{	
+			this.unmuteBtn.visible = true; 
+		}
+		
+		/* Shows the Unmute Graphic on click.*/
+		this.muteBtn.addEventListener("click", fl_ClickToShow_UnmuteGraphic.bind(this));
+		
+		function fl_ClickToShow_UnmuteGraphic() 
+		{	
+			this.unmuteBtn_visual.visible = true; 
+		}
+		
+		/* UNMUTE BUTTON CLICK.*/
+		
+		/* This function Mutes the video on click.*/
+		this.unmuteBtn.addEventListener("click", fl_MouseClickHandler_4.bind(this));
+		
+		function fl_MouseClickHandler_4()
+		{
+			
+		$("#myVideo")[0].muted = false;
+			
+		}
+		
+		/* Hides the Unmute button on click.*/
+		this.unmuteBtn.addEventListener("click", fl_ClickToHide_Unmute.bind(this));
+		
+		function fl_ClickToHide_Unmute() 
+		{
+			this.unmuteBtn.visible = false; 
+		}
+		
+		/*Hides the Unmute Graphic on click.*/
+		this.unmuteBtn.addEventListener("click", fl_ClickToHide_UnmuteGraphic.bind(this));
+		
+		function fl_ClickToHide_UnmuteGraphic() 
+		{
+				this.unmuteBtn_visual.visible = false; 
+		}
+		
+		/* Shows the Mute button on click.*/
+		this.unmuteBtn.addEventListener("click", fl_ClickToShowMute.bind(this));
+		
+		function fl_ClickToShowMute() 
+		{	
+			this.muteBtn.visible = true; 
+		}
+		
+		/* Shows the Mute Graphic on click.*/
+		this.unmuteBtn.addEventListener("click", fl_ClickToShow_MuteGraphic.bind(this));
+		
+		function fl_ClickToShow_MuteGraphic() 
+		{	
+			this.muteBtn_visual.visible = true; 
+		}
+		
+		
+		/* ON VIDEO END.*/
+		/* Fades in the end card, default time is 1000*/
+		this.myVideo.on("added", function() {
+			$("#myVideo").on("ended", function() {
+				$("#endCard").animate({"opacity": "1"}, 1000);
+				pauseBtn.visible = false;
+				playBtn.visible = true;
+				playBtn_visual.visible = false;
+				createjs.Tween.get(pauseBtn_visual).to({alpha:0}, 1000);
+				createjs.Tween.get(unmuteBtn_visual).to({alpha:0}, 1000);
+				createjs.Tween.get(muteBtn_visual).to({alpha:0}, 1000);
+				createjs.Tween.get(replayBtn_visual).to({alpha:1}, 1000);
+			});
+		});
+		
+		/* VIDEO UNIT */
+		/* This positions the video component below the stage.*/
+		var dom_container = document.getElementById("dom_overlay_container");
+		
+		          dom_container.style.zIndex=-1;
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// VidCtrl Hotspots
+	this.muteBtn = new lib.PressBtn();
+	this.muteBtn.name = "muteBtn";
+	this.muteBtn.parent = this;
+	this.muteBtn.setTransform(1504,445.8,1,0.999,0,0,0,-1.7,0.1);
+	new cjs.ButtonHelper(this.muteBtn, 0, 1, 2, false, new lib.PressBtn(), 3);
+
+	this.unmuteBtn = new lib.PressBtn();
+	this.unmuteBtn.name = "unmuteBtn";
+	this.unmuteBtn.parent = this;
+	this.unmuteBtn.setTransform(1503.5,445.9,1,1.001,0,0,0,-2.2,0.2);
+	new cjs.ButtonHelper(this.unmuteBtn, 0, 1, 2, false, new lib.PressBtn(), 3);
+
+	this.pauseBtn = new lib.PressBtn();
+	this.pauseBtn.name = "pauseBtn";
+	this.pauseBtn.parent = this;
+	this.pauseBtn.setTransform(1544.9,445.9,0.999,1,0,0,0,-2.1,0.2);
+	new cjs.ButtonHelper(this.pauseBtn, 0, 1, 2, false, new lib.PressBtn(), 3);
+
+	this.playBtn = new lib.PressBtn();
+	this.playBtn.name = "playBtn";
+	this.playBtn.parent = this;
+	this.playBtn.setTransform(1547.4,445.9,1,1,0,0,0,0.4,0.2);
+	new cjs.ButtonHelper(this.playBtn, 0, 1, 2, false, new lib.PressBtn(), 3);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.playBtn},{t:this.pauseBtn},{t:this.unmuteBtn},{t:this.muteBtn}]}).wait(1));
+
+	// VidCtrl Visuals 
+	this.pauseBtn_visual = new lib.pauseGraphic();
+	this.pauseBtn_visual.name = "pauseBtn_visual";
+	this.pauseBtn_visual.parent = this;
+	this.pauseBtn_visual.setTransform(1567,466.7,1,1,0,0,0,20,20);
+
+	this.replayBtn_visual = new lib.replayBtn();
+	this.replayBtn_visual.name = "replayBtn_visual";
+	this.replayBtn_visual.parent = this;
+	this.replayBtn_visual.setTransform(1567.5,467.2,1,1,0,0,0,20.5,20.5);
+
+	this.muteBtn_visual = new lib.unmute_visual();
+	this.muteBtn_visual.name = "muteBtn_visual";
+	this.muteBtn_visual.parent = this;
+	this.muteBtn_visual.setTransform(1525.7,466.7,1,1,0,0,0,20,20);
+
+	this.unmuteBtn_visual = new lib.mute_visual();
+	this.unmuteBtn_visual.name = "unmuteBtn_visual";
+	this.unmuteBtn_visual.parent = this;
+	this.unmuteBtn_visual.setTransform(1525.7,466.7,1,1,0,0,0,20,20);
+
+	this.playBtn_visual = new lib.playGraphic();
+	this.playBtn_visual.name = "playBtn_visual";
+	this.playBtn_visual.parent = this;
+	this.playBtn_visual.setTransform(1547,446.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.playBtn_visual},{t:this.unmuteBtn_visual},{t:this.muteBtn_visual},{t:this.replayBtn_visual},{t:this.pauseBtn_visual}]}).wait(1));
+
+	// hotspot
+	this.hotspot = new lib.hotspot();
+	this.hotspot.name = "hotspot";
+	this.hotspot.parent = this;
+	this.hotspot.setTransform(0.1,0.1,1,1,0,0,0,0.1,0.1);
+	new cjs.ButtonHelper(this.hotspot, 0, 1, 2, false, new lib.hotspot(), 3);
+
+	this.timeline.addTween(cjs.Tween.get(this.hotspot).wait(1));
+
+	// border
+	this.shape = new cjs.Shape();
+	this.shape.graphics.f().s("#000000").ss(1,1,1).p("Eh8/gnDMD5/AAAMAAABOHMj5/AAAg");
+	this.shape.setTransform(800,250);
+
+	this.timeline.addTween(cjs.Tween.get(this.shape).wait(1));
+
+	// endcard
+	this.endCard = new lib.an_Image({'id': 'endCard', 'src':'https://assets.bounceexchange.com/assets/uploads/users/3057/50f8743a708cc9e72dad4a73b0403c6e.jpg', 'alt':'image_1', 'border':'0', 'visible':true, 'class':'image-EC'});
+
+	this.endCard.setTransform(800,250.5,16,5,0,0,0,50,50.1);
+
+	this.timeline.addTween(cjs.Tween.get(this.endCard).wait(1));
+
+	// Video 
+	this.myVideo = new lib.an_Video({'id': 'myVideo', 'src':'https://static.bounceexchange.com/assets/uploads/users/3057/6365a8e99208f82776ce99cad160b8a3.mp4', 'autoplay':true, 'controls':false, 'loop':false, 'preload':true, 'class':'video'});
+
+	this.myVideo.setTransform(800.4,248,4,1.667,0,0,0,200.1,148.8);
+
+	this.timeline.addTween(cjs.Tween.get(this.myVideo).wait(1));
+
+}).prototype = getMCSymbolPrototype(lib.mainstage, new cjs.Rectangle(-8,-2.5,1616,505), null);
+
+
+// stage content:
+(lib._1600x500_Video = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		this.mainstage.hotspot.addEventListener("click", clickthroughSizmek);
+		function clickthroughSizmek(){
+		EB.clickthrough();
+		  }
+		  
+		
+		  //videotracking
+		createjs.Ticker.addEventListener("tick", tickCheck, false);
+		function tickCheck(e) {
+			createjs.Ticker.removeEventListener("tick", tickCheck);
+			$("video").each(function () {
+				new EBG.VideoModule($(this).get(0));
+			});
+		}
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// mainframe
+	this.mainstage = new lib.mainstage();
+	this.mainstage.name = "mainstage";
+	this.mainstage.parent = this;
+
+	this.timeline.addTween(cjs.Tween.get(this.mainstage).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(792,247.5,1616,505);
+// library properties:
+lib.properties = {
+	id: '7D027AC9E68344AFB6EE0B7B14F769DF',
+	width: 1600,
+	height: 500,
+	fps: 24,
+	color: "#FFFFFF",
+	opacity: 0.00,
+	webfonts: {},
+	manifest: [
+		{src:"https://assets.bounceexchange.com/assets/uploads/users/3057/3391c5347cce1968938039c9eb811568.png", id:"1600x500_Volvo_V1_atlas_"},
+		{src:"https://code.jquery.com/jquery-2.2.4.min.js", id:"lib/jquery-2.2.4.min.js"},
+		{src:"components/sdk/anwidget.js", id:"sdk/anwidget.js"},
+		{src:"components/video/src/video.js", id:"an.Video"},
+		{src:"components/ui/src/image.js", id:"an.Image"}
+	],
+	preloads: []
+};
+
+
+
+// bootstrap callback support:
+
+(lib.Stage = function(canvas) {
+	createjs.Stage.call(this, canvas);
+}).prototype = p = new createjs.Stage();
+
+p.setAutoPlay = function(autoPlay) {
+	this.tickEnabled = autoPlay;
+}
+p.play = function() { this.tickEnabled = true; this.getChildAt(0).gotoAndPlay(this.getTimelinePosition()) }
+p.stop = function(ms) { if(ms) this.seek(ms); this.tickEnabled = false; }
+p.seek = function(ms) { this.tickEnabled = true; this.getChildAt(0).gotoAndStop(lib.properties.fps * ms / 1000); }
+p.getDuration = function() { return this.getChildAt(0).totalFrames / lib.properties.fps * 1000; }
+
+p.getTimelinePosition = function() { return this.getChildAt(0).currentFrame / lib.properties.fps * 1000; }
+
+an.bootcompsLoaded = an.bootcompsLoaded || [];
+if(!an.bootstrapListeners) {
+	an.bootstrapListeners=[];
+}
+
+an.bootstrapCallback=function(fnCallback) {
+	an.bootstrapListeners.push(fnCallback);
+	if(an.bootcompsLoaded.length > 0) {
+		for(var i=0; i<an.bootcompsLoaded.length; ++i) {
+			fnCallback(an.bootcompsLoaded[i]);
+		}
+	}
+};
+
+an.compositions = an.compositions || {};
+an.compositions['7D027AC9E68344AFB6EE0B7B14F769DF'] = {
+	getStage: function() { return exportRoot.getStage(); },
+	getLibrary: function() { return lib; },
+	getSpriteSheet: function() { return ss; },
+	getImages: function() { return img; }
+};
+
+an.compositionLoaded = function(id) {
+	an.bootcompsLoaded.push(id);
+	for(var j=0; j<an.bootstrapListeners.length; j++) {
+		an.bootstrapListeners[j](id);
+	}
+}
+
+an.getComposition = function(id) {
+	return an.compositions[id];
+}
+
+function _updateVisibility(evt) {
+	if((this.getStage() == null || this._off || this._lastAddedFrame != this.parent.currentFrame) && this._element) {
+		this._element.detach();
+		stage.removeEventListener('drawstart', this._updateVisibilityCbk);
+		this._updateVisibilityCbk = false;
+	}
+}
+function _handleDrawEnd(evt) {
+	var props = this.getConcatenatedDisplayProps(this._props), mat = props.matrix;
+	var tx1 = mat.decompose(); var sx = tx1.scaleX; var sy = tx1.scaleY;
+	var dp = window.devicePixelRatio || 1; var w = this.nominalBounds.width * sx; var h = this.nominalBounds.height * sy;
+	mat.tx/=dp;mat.ty/=dp; mat.a/=(dp*sx);mat.b/=(dp*sx);mat.c/=(dp*sy);mat.d/=(dp*sy);
+	this._element.setProperty('transform-origin', this.regX + 'px ' + this.regY + 'px');
+	var x = (mat.tx + this.regX*mat.a + this.regY*mat.c - this.regX);
+	var y = (mat.ty + this.regX*mat.b + this.regY*mat.d - this.regY);
+	var tx = 'matrix(' + mat.a + ',' + mat.b + ',' + mat.c + ',' + mat.d + ',' + x + ',' + y + ')';
+	this._element.setProperty('transform', tx);
+	this._element.setProperty('width', w);
+	this._element.setProperty('height', h);
+	this._element.update();
+}
+
+function _tick(evt) {
+	var stage = this.getStage();
+	stage&&stage.on('drawend', this._handleDrawEnd, this, true);
+	if(!this._updateVisibilityCbk) {
+		this._updateVisibilityCbk = stage.on('drawstart', this._updateVisibility, this, false);
+	}
+}
+
+
+})(createjs = createjs||{}, AdobeAn = AdobeAn||{});
+var createjs, AdobeAn;
