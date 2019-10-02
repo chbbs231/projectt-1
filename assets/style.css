@@ -1,21 +1,36 @@
-.navbar-brand {
-    x: 6px;
-    y: 33px;
-    width: 1330px;
-    height: 49px;
-    background: #6EA4BF;
-    border: none;
-    border-radius: 11px;
-    text-align: center
-    }
+.navColor {
+    background-color: #6ea4bf;
+  }
+ .Button {
+        width: 93px;
+        height: 23px;
+        color: #FFFFFF;
+        font-family: Arimo;
+        font-size: 15px;
+        font-weight: normal;
+        font-style: normal;
+        text-decoration: none;
+        text-align: center;
+        background: rgba(224,224,224,0);
+        border: 3px solid #FFFFFF;
+        border-radius: 12px;
+        }
+ .subNav {
+        color: #6ea4bf;
+          }
+img{height: 300px;
+width: 50px;
+padding-bottom: 10px}
 
-#subnav {
-    x: 8px;
-    y: 81.67355727820845px;
-    width: 1328px;
-    height: 169px;
-    background: #E0E0E0;
-    border: none;
-    border-radius: 10px;
-    }
+.cardpics {height: 120px;
+width: 150px;
+padding-top: 30px;
+padding-left: 10px;
+}
+
+.nexcar{
+    height: 140px;
+border: 1px
+}
+#search{ float: right;}
 

@@ -9,35 +9,83 @@
     <title>Bam</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Bam BoomPing</a>
-        
-      </nav>
-    <ul id= "subnav" class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Health</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Politics</a>
-        </li>
-        
+    <div class="row p-1 navColor">
+        <div class="col-9  col-md-11">
+          <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
+        </div>
+        <div class="col-3 col-md-1">
+          <button type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+            data-target="#signInModal">Login</button>
+        </div>
+      </div>
+
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signInModalTitle">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-outline-info mb-3">Sign In</button>
+            <div class="modal-footer"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ul class="nav justify-content-center subNav p-2">
+      <li class="nav-item">
+        <a class="nav-link active" href="./index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./sports.html">Sports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Health</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Politics</a>
+      </li>
     </ul>
-       
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button id ="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <div class="container">
-            <div class="row">
-              <div class="col-8">
-                  <div class="bd-example">
-                      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div class="row p-5 bg-secondary">
+        <div class="col-2 col-md-4 bg-secondary"></div>
+        <div class="col-8 col-md-4 bg-secondary">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+            <div class="input-group ml-1">
+              <input type="search" placeholder="search" aria-describedby="searchBtn" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 col-md-4 bg-secondary"></div>
+      </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="bd-example">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                           <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                           <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -45,21 +93,21 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="..." class="d-block w-100" alt="...">
+                            <img src="https://picsum.photos/id/338/200/300" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                               <h5>First slide label</h5>
                               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                             </div>
                           </div>
                           <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
+                            <img src="https://picsum.photos/id/338/200/300" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                               <h5>Second slide label</h5>
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                             </div>
                           </div>
                           <div class="carousel-item">
-                            <img src="..." class="d-block w-100" alt="...">
+                            <img src="https://picsum.photos/id/338/200/300" class="d-block w-100" alt="...">
                             <div class="carousel-caption d-none d-md-block">
                               <h5>Third slide label</h5>
                               <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -77,9 +125,177 @@
                       </div>
                     </div>
               </div>
-              <div class="col-4">col-4</div>
+              <div class="col-6">
+                <div class="row">
+                    <div class ="nexcar" class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                          <div class="col-sm-4">
+                            <img class ="cardpics" src="http://lorempixel.com/400/200/sports" class="card-img" alt="...">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h5 class="card-title">Card title</h5>
+                              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
+                      <div class ="nexcar" class="card mb-3" style="max-width: 540px;">
+                          <div class="row no-gutters">
+                            <div class="col-sm-4">
+                              <img class ="cardpics" src="http://lorempixel.com/400/200/sports" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>  
+                              </div>
+                            </div>
+                          </div>
+                        </div>      
+                </div>
+              </div>
             </div>
           </div>
+  <div class="container">
+  <div class= "mainb" class= "row">
+      <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div class= "mainb" class= "row">
+      <div class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img class = "cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  <div  class= "mainb" class= "row">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<div class= "mainb" class= "row">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div  class= "mainb" class= "row">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="mainb" class= "row">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div  class= "mainb" class= "row">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div  class= "mainb" class= "row">
+  <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class= "row">
+  <div class= "mainb" class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img class ="cardpics" src="http://lorempixel.com/400/200/sports/1/" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
