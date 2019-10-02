@@ -1,11 +1,6 @@
-.navbar-brand {
-    width: 1330px;
-    height: 75px;
-    background: #6EA4BF;
-    border: none;
-    border-radius: 11px;
-    text-align: center
-    }
+.navColor {
+    background-color: #6ea4bf;
+  }
  .Button {
         width: 93px;
         height: 23px;
@@ -20,13 +15,9 @@
         border: 3px solid #FFFFFF;
         border-radius: 12px;
         }
-#subnav {
-    width: 1330px;
-    height: 75px;
-    background: #E0E0E0;
-    border: none;
-    border-radius: 10px;
-    }
+ .subNav {
+        color: #6ea4bf;
+          }
 img{height: 300px;
 width: 50px;
 padding-bottom: 10px}

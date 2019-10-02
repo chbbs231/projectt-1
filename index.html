@@ -9,28 +9,78 @@
     <title>Bam</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Bam BoomPing</a>  
-    </nav>
-    <ul id= "subnav" class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sports</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Health</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Politics</a>
-        </li>
-        
+    <div class="row p-1 navColor">
+        <div class="col-9  col-md-11">
+          <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
+        </div>
+        <div class="col-3 col-md-1">
+          <button type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+            data-target="#signInModal">Login</button>
+        </div>
+      </div>
+
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signInModalTitle">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <button type="submit" class="btn btn-outline-info mb-3">Sign In</button>
+            <div class="modal-footer"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <ul class="nav justify-content-center subNav p-2">
+      <li class="nav-item">
+        <a class="nav-link active" href="./index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./sports.html">Sports</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Health</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Politics</a>
+      </li>
     </ul>
-    <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button id ="search" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="row p-5 bg-secondary">
+        <div class="col-2 col-md-4 bg-secondary"></div>
+        <div class="col-8 col-md-4 bg-secondary">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+            <div class="input-group ml-1">
+              <input type="search" placeholder="search" aria-describedby="searchBtn" class="form-control border-0 bg-light">
+              <div class="input-group-append">
+                <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-2 col-md-4 bg-secondary"></div>
+      </div>
+    
     <div class="container">
         <div class="row">
             <div class="col-6">
