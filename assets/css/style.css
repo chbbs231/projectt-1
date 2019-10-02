@@ -1,44 +1,17 @@
-.navColor {
-  background-color: #6ea4bf;
+.navbar-brand{
+
+font-family: 'Monoton';
+margin:auto;
 }
 
-.Button {
-  width: 93px;
-  height: 23px;
-  color: #FFFFFF;
-  font-family: Arimo;
-  font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: none;
-  text-align: center;
-  background: rgba(224, 224, 224, 0);
-  border: 3px solid #FFFFFF;
-  border-radius: 12px;
+h1{
+    color:green;
 }
 
-.subNav {
-  color: #6ea4bf;
-}
+.row{
 
-img {
-  height: 300px;
-  width: 50px;
-  padding-bottom: 10px
-}
+   margin-top: 40px;
+   margin-right:10px;
+   margin-left: 10px;
 
-.cardpics {
-  height: 120px;
-  width: 150px;
-  padding-top: 30px;
-  padding-left: 10px;
-}
-
-.nexcar {
-  height: 140px;
-  border: 1px
-}
-
-#search {
-  float: right;
-}
+   }

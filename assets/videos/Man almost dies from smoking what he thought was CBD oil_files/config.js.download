@@ -1,0 +1,44 @@
+COMSCORE.BMX.Broker.ProjConfig = {
+	"Config":{
+		"MasterSettings": {
+			"ProjectId": "p347706474",
+			"ExcludeUrl": "",
+			"ExcludeReferrerUrl": "",
+			"IncludeUrl": "",
+			"ExcludePrad": "",
+			"OptOutPrad": "",
+			"ArcName": "ar_c",
+			"PradName": "prad",
+			"ControlAdArc": 1,
+			"InteractionDelay": 0
+		},
+		"PradSettings": {
+			"DefaultPrad": {
+				"RecruitFrequency":"",
+				"Methodology": "",
+				"Params": {"dom": 9999},
+				"Delay": 10000
+			},
+			"List": [{
+				"Prad": [""],
+				"RecruitFrequency": 0.0,
+				"Methodology": "",
+				"Branding": "",
+				"Params": {"dom": "", "inv_type": "" },
+				"Inv": "",
+				"InvConfigNum": "",
+				"Delay": 10000
+			}]
+		},
+		"ArcSettings": {
+			"List": [{
+				"Arc": [1],
+				"Delay": 0
+			}]
+		}
+	},
+	"Events":{
+		"beforeRecruit": function(utils, options) {
+		}
+	}
+};
