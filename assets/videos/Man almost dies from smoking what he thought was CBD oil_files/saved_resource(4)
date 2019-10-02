@@ -1,0 +1,21 @@
+
+var ftGUID_3591739="4126234233282B";
+var ftConfID_3591739="15301303";
+var ftParams_3591739="ftx=&fty=&ftadz=&ftscw=&ft_custom=cnn_3591739&ftOBA=1&ft_agentEnv=0&ft_referrer=https%3A%2F%2Fwww.cnn.com%2Fvideos%2Fhealth%2F2019%2F09%2F27%2Fcbd-problems-gupta-newday-vpx.cnn&ft_keyword=cnn_3591739&cachebuster=873949.8004494326";
+var ftKeyword_3591739="cnn";
+var ftCustom_3591739="cnn_3591739";
+var ftSection_3591739="";
+var ftSegment_3591739="um2,xp6,w2c,v6j,xqs,tg1";
+var ftSegmentList_3591739=[{s:'um2'},{s:'xp6'},{s:'w2c'},{s:'v6j'},{s:'xqs'},{s:'tg1'}];
+var ftRuleMatch_3591739="00010000";
+var ftTimestamp_3591739="1569872695";
+var ftImp3591739 = {};
+ftImp3591739.privacy = "x";
+ftImp3591739.guidAge = "164";
+ftImp3591739.impID = "8FF7691A-BD47-4C61-6E4B-C3FC370BDBA7";
+ftImp3591739.duid = "FT:4126234233282B";
+
+ftImp3591739.ft_tpplid = "";
+ftImp3591739.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/359/3591739/2735437/js/j-3591739-2735437.js" id="ftscript_m3591739" name="ftscript_m3591739"></scr'+'ipt>');
