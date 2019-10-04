@@ -1,3 +1,18 @@
+
+  // initializing firebase***
+  const config = {
+    apiKey: 'AIzaSyC1U8sQWVOz6FkYyxtNCBSRl8XDNZY24ao',
+    authDomain: 'projectonebam.firebaseapp.com',
+    databaseURL: 'https://projectonebam.firebaseio.com',
+    projectId: 'projectonebam',
+    storageBucket: '',
+    messagingSenderId: '414001198345',
+    appId: '1:414001198345:web:101af6fb28d538d95e0fd8',
+    measurementId: 'G-MR21YKQQ59'
+  }
+  // Initialize Firebase
+  firebase.initializeApp(config);
+
 // incorporating NEWS API ***works with postman***
 // change second line (q=Apple) to say either health, sports, or politics
 
