@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awsome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Bam</title>
+</head>
+
+<body>
+  <!-- navBar -->
+  <div class="row p-1 navColor">
+    <div class="col-9  col-md-11">
+      <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
+    </div>
+    <div class="col-3 col-md-1">
+      <button id="login" type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+        data-target="#signInModal">Login</button>
+    </div>
+  </div>
+  <!-- login Modal -->
+  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signInModalTitle">Login</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="emailAddress">Email address</label>
+              <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember">Remember Me</label>
+            </div>
+            <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
+            <div class="modal-footer"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- subNav -->
+  <ul class="nav justify-content-center subNav p-2">
+    <li class="nav-item">
+      <a class="nav-link" href="./index.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./sports.html">Sports</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./health.html">Health</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="./politics.html">Politics</a>
+    </li>
+  </ul>
+
+  <!-- Seach bar -->
+  <div class="row p-5 bg-secondary">
+    <div class="col-2 col-md-4 bg-secondary"></div>
+    <div class="col-8 col-md-4 bg-secondary">
+      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+        <div class="input-group ml-1">
+          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn" class="form-control border-0 bg-light">
+          <div class="input-group-append">
+            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 col-md-4 bg-secondary"></div>
+  </div>
+
+<!-- div for article to display -->
+
+  <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+
+                <br>
+
+                <h1 class="display-3 text-center" id='articleTitle'><strong><u>Article Title</u></strong></h1>
+
+                <br>
+
+                <h5 class="h5 text-left" id='authorName'><em>Author</em></h5>
+
+                <br><br>
+
+                <div id="articleText">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et culpa nulla beatae voluptatum fugit mollitia laudantium quasi tenetur fuga, magni consectetur totam incidunt accusantium placeat dolorem eveniet id magnam corporis?</p>
+                </div>
+            </div>
+        </div>
+  </div>
+
+
+<!-- footer -->
+  <footer class="p-5 mt-5 navColor">
+    <p class="text-white text-center"><a href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
+</footer>
+
+  <!-- firebase -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-analytics.js"></script>
+
+
+<!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+</body>
+
+</html>
