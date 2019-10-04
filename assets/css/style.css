@@ -1,8 +1,7 @@
 .navColor {
     background-color: #6ea4bf;
-  }
-  
-  .Button {
+   }
+   .Button {
     width: 93px;
     height: 23px;
     color: #FFFFFF;
@@ -15,30 +14,29 @@
     background: rgba(224, 224, 224, 0);
     border: 3px solid #FFFFFF;
     border-radius: 12px;
-  }
-  
-  .subNav {
+
+   }
+   .subNav {
     color: #6ea4bf;
-  }
-  
-  img {
+   }
+   img {
     height: 300px;
     width: 50px;
     padding-bottom: 10px
-  }
-  
-  .cardpics {
+   }
+   .cardpics {
+
     height: 120px;
     width: 150px;
     padding-top: 30px;
     padding-left: 10px;
-  }
-  
-  .nexcar {
+
+   }
+   .nexcar {
     height: 140px;
     border: 1px
-  }
-  
-  #search {
+   }
+   #search {
     float: right;
-  }
+   } 
+
