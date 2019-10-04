@@ -14,6 +14,7 @@
     background: rgba(224, 224, 224, 0);
     border: 3px solid #FFFFFF;
     border-radius: 12px;
+
    }
    .subNav {
     color: #6ea4bf;
@@ -24,10 +25,12 @@
     padding-bottom: 10px
    }
    .cardpics {
+
     height: 120px;
     width: 150px;
     padding-top: 30px;
     padding-left: 10px;
+
    }
    .nexcar {
     height: 140px;
@@ -36,3 +39,4 @@
    #search {
     float: right;
    } 
+
