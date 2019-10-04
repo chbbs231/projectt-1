@@ -14,20 +14,61 @@
     integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Bam</title>
+  <title>Sports</title>
 </head>
 
 <body>
   <!-- navBar -->
   <div class="row p-1 navColor">
-    <div class="col-9  col-md-11">
+    <div class="col-7  col-md-10">
       <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
     </div>
-    <div class="col-3 col-md-1">
-      <button id="login" type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+    <div class="col-5 col-md-2">
+      <!-- Login trigger modal -->
+      <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
+      <!-- Sign Up trigger modal -->
+      <button type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button>
     </div>
   </div>
+  </div>
+  
+  <!-- Sign Up Modal -->
+  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="emailAddress">Email address</label>
+              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label for="password">Confirm Password</label>
+              <input type="password" class="form-control" id="confPassword" placeholder="Confirm Password">
+            </div>
+            <button id="signUp" type="submit" class="btn btn-outline-info mb-3">Submit</button>
+            <div class="modal-footer"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- login Modal -->
   <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
     aria-hidden="true">
@@ -95,93 +136,70 @@
     <div class="col-2 col-md-4 bg-secondary"></div>
   </div>
 
-  <!-- Article Cards -->
-  <div class="container mt-2">
-    <div class="row">
-      <div class="col-12 col-md-3">
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row">
-          <div class="card mb-3">
-            <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
+    <!-- Article Cards -->
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-12 col-md-3">
+          <div class="card border-light mb-3">
+            <div class="card-header">Header</div>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <h5 class="card-title">Light card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+          <div class="card border-light mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Light card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="card mb-3">
+              <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-3">
+          <div class="card border-light mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Light card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
+            </div>
+          </div>
+          <div class="card border-light mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Light card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-3">
-        <div class="card  border-light text-dark mb-3">
-          <div class="card-header">Top Headlines</div>
-          <div class="card-body">
-            <h5 class="card-title"> card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-deck">
-        <div class="card">
-          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This content is a little bit longer.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-        <div class="card">
-          <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content. This card has even longer content than the first to show that equal height action.</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </div>
-        </div>
-      </div>
     </div>
+
   </div>
   <footer class="p-5 mt-5 navColor">
     <p class="text-white text-center"><a href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
   </footer>
+
 
     <!-- firebase -->
 <!-- The core Firebase JS SDK is always required and must be listed first -->
