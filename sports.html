@@ -14,7 +14,7 @@
     integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Sports</title>
+  <title>Bam</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
       <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
     </div>
     <div class="col-3 col-md-1">
-      <button type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
+      <button id="login" type="button" class="btn btn-outline-light mt-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
     </div>
   </div>
@@ -42,19 +42,19 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              <label for="emailAddress">Email address</label>
+              <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
                 placeholder="Enter email">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password">
             </div>
             <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember">Remember Me</label>
             </div>
-            <button type="submit" class="btn btn-outline-info mb-3">Sign In</button>
+            <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
             <div class="modal-footer"></div>
           </form>
         </div>
@@ -68,9 +68,7 @@
       <a class="nav-link" href="./index.html">Home</a>
     </li>
     <li class="nav-item">
-
       <a class="nav-link" href="./sports.html">Sports</a>
-
     </li>
     <li class="nav-item">
       <a class="nav-link" href="./health.html">Health</a>
@@ -86,7 +84,8 @@
     <div class="col-8 col-md-4 bg-secondary">
       <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
         <div class="input-group ml-1">
-          <input type="search" placeholder="search" aria-describedby="searchBtn" class="form-control border-0 bg-light">
+          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+            class="form-control border-0 bg-light">
           <div class="input-group-append">
             <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
           </div>
@@ -126,8 +125,7 @@
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content.
-                This content is a little bit longer.</p>
+                content. This content is a little bit longer.</p>
               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
@@ -144,15 +142,14 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card-deck">
         <div class="card">
           <img src="./assets/images/placeholder.png" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.
-              This content is a little bit longer.</p>
+              content. This content is a little bit longer.</p>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated 3 mins ago</small>
@@ -173,8 +170,7 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-              content.
-              This card has even longer content than the first to show that equal height action.</p>
+              content. This card has even longer content than the first to show that equal height action.</p>
           </div>
           <div class="card-footer">
             <small class="text-muted">Last updated 3 mins ago</small>
@@ -184,36 +180,10 @@
     </div>
   </div>
   <footer class="p-5 mt-5 navColor">
-      <p class="text-white text-center">Footer Goes Here</p>
+    <p class="text-white text-center">Footer Goes Here</p>
   </footer>
 
 
-<!-- firebase -->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var config = {
-    apiKey: 'AIzaSyC1U8sQWVOz6FkYyxtNCBSRl8XDNZY24ao',
-    authDomain: 'projectonebam.firebaseapp.com',
-    databaseURL: 'https://projectonebam.firebaseio.com',
-    projectId: 'projectonebam',
-    storageBucket: '',
-    messagingSenderId: '414001198345',
-    appId: '1:414001198345:web:101af6fb28d538d95e0fd8',
-    measurementId: 'G-MR21YKQQ59'
-  }
-  // Initialize Firebase
-  firebase.initializeApp(config);
-  firebase.analytics();
-</script>
-
-<!--  -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
