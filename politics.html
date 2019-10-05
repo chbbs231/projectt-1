@@ -20,10 +20,10 @@
 <body>
   <!-- navBar -->
   <div class="row p-1 navColor">
-    <div class="col-7  col-md-10">
+    <div class="col-6  col-md-9 col-lg-10">
       <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
     </div>
-    <div class="col-5 col-md-2">
+    <div class="col-6 col-md-3 col-lg-2">
       <!-- Login trigger modal -->
       <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
@@ -39,7 +39,7 @@
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" id="signUpContent">
         <div class="modal-header">
           <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -47,6 +47,7 @@
           </button>
         </div>
         <div class="modal-body">
+          <div id="alert"></div>
           <form>
             <div class="form-group">
               <label for="emailAddress">Email address</label>

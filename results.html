@@ -18,90 +18,91 @@
 </head>
 
 <body>
-  <!-- navBar -->
-  <div class="row p-1 navColor">
-    <div class="col-7  col-md-10">
-      <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
-    </div>
-    <div class="col-5 col-md-2">
-      <!-- Login trigger modal -->
-      <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
-        data-target="#signInModal">Login</button>
-      <!-- Sign Up trigger modal -->
-      <button type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal" data-target="#signUpModal">
-        Sign Up
-      </button>
-    </div>
+<!-- navBar -->
+<div class="row p-1 navColor">
+  <div class="col-6  col-md-9 col-lg-10">
+    <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
   </div>
+  <div class="col-6 col-md-3 col-lg-2">
+    <!-- Login trigger modal -->
+    <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
+      data-target="#signInModal">Login</button>
+    <!-- Sign Up trigger modal -->
+    <button type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal" data-target="#signUpModal">
+      Sign Up
+    </button>
   </div>
+</div>
+</div>
 
-  <!-- Sign Up Modal -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label for="password">Confirm Password</label>
-              <input type="password" class="form-control" id="confPassword" placeholder="Confirm Password">
-            </div>
-            <button id="signUp" type="submit" class="btn btn-outline-info mb-3">Submit</button>
-            <div class="modal-footer"></div>
-          </form>
-        </div>
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" id="signUpContent">
+      <div class="modal-header">
+        <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="alert"></div>
+        <form>
+          <div class="form-group">
+            <label for="emailAddress">Email address</label>
+            <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
+              placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input type="password" class="form-control" id="confPassword" placeholder="Confirm Password">
+          </div>
+          <button id="signUp" type="submit" class="btn btn-outline-info mb-3">Sign Up</button>
+          <div class="modal-footer"></div>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- login Modal -->
-  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signInModalTitle">Login</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="remember">
-              <label class="form-check-label" for="remember">Remember Me</label>
-            </div>
-            <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
-            <div class="modal-footer"></div>
-          </form>
-        </div>
+<!-- login Modal -->
+<div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="signInModalTitle">Login</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="emailAddress">Email address</label>
+            <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
+              placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="remember">
+            <label class="form-check-label" for="remember">Remember Me</label>
+          </div>
+          <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
+          <div class="modal-footer"></div>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
   <!-- subNav -->
   <ul class="nav justify-content-center subNav p-2">
