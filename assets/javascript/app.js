@@ -18,26 +18,20 @@ database = firebase.firestore()
 //Click Event On Sign Up Button in Modal to store the info provided
 document.getElementById(`signUp`).addEventListener(`click`, e => {
     e.preventDefault()
-    // console.log(`signup Button Works!`)
-    let signUpEmail = document.getElementById(`signUpEmail`).value
-    let signUpPassword = document.getElementById(`signUpPassword`).value
-    let confPw = document.getElementById(`confPassword`).value
-
-    //TESTING - console log input values on submit
-    console.log(signUpEmail)
-    console.log(signUpPassword)
-    console.log(confPw)
 
     //Object for new user
     const newUser = {
-        email: signUpEmail,
-        password: signUpPassword
+        email: document.getElementById(`signUpEmail`).value,
+        password: document.getElementById(`signUpPassword`).value,
+        confPw: document.getElementById(`confPassword`).value
     }
+    //TESTING - console log input values on submit
+    console.log(newUser)
 
     //Storing the new train object into the Firestore database
     database
         .collection(`users`)
-        .doc(`user`)
+        .doc(newUser.email)
         .set(newUser)
 
     //Reset form
