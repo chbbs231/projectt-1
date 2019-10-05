@@ -39,6 +39,7 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
     document.getElementById(`signUpPassword`).value = ""
     document.getElementById(`confPassword`).value = ""
 
+    //Document Snapshot & have modal display a thank you message
     database
         .collection(`users`)
         .onSnapshot(({ docs }) => {
