@@ -1,4 +1,3 @@
-
 // initializing firebase***
 const config = {
     apiKey: 'AIzaSyC1U8sQWVOz6FkYyxtNCBSRl8XDNZY24ao',
@@ -12,6 +11,60 @@ const config = {
 }
 // Initialize Firebase
 firebase.initializeApp(config);
+
+//Creating a vaiable for the db
+database = firebase.firestore()
+
+//Click Event On Sign Up Button in Modal to store the info provided
+document.getElementById(`signUp`).addEventListener(`click`, e => {
+    e.preventDefault()
+
+    //Object for new user
+    const newUser = {
+        email: document.getElementById(`signUpEmail`).value,
+        password: document.getElementById(`signUpPassword`).value,
+        confPw: document.getElementById(`confPassword`).value
+    }
+    //TESTING - console log object of input values on submit
+    console.log(newUser)
+
+    //Storing the new train object into the Firestore database
+    database
+        .collection(`users`)
+        .doc(newUser.email)
+        .set(newUser)
+
+    //Reset form
+    document.getElementById(`signUpEmail`).value = ""
+    document.getElementById(`signUpPassword`).value = ""
+    document.getElementById(`confPassword`).value = ""
+
+    //Document Snapshot & have modal display a thank you message
+    database
+        .collection(`users`)
+        .onSnapshot(({ docs }) => {
+            docs.forEach(user => {
+                let { email, password, confPw } = user.data()
+                document.getElementById(`signUpContent`).innerHTML = `
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <h2>Thanks for Signing Up with BAM!<h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                `
+            })
+        })
+
+})
+
+
+
 
 // incorporating NEWS API ***works with postman***
 // change second line (q=Apple) to say either health, sports, or politics
