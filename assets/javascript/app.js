@@ -28,24 +28,30 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
     //TESTING - console log object of input values on submit
     console.log(newUser)
 
-    //Storing the new train object into the Firestore database
-    database
-        .collection(`users`)
-        .doc(newUser.email)
-        .set(newUser)
+    //Validating the sign up form
+    if (newUser.password !== newUser.confPw) {
+        document.getElementById(`alert`).innerHTML = `
+             <div class="alert alert-info text-center" role="alert" id="alert">Please enter matching passwords.</div>
+        `
+    } else {
+        //Reset form
+        document.getElementById(`signUpEmail`).value = ""
+        document.getElementById(`signUpPassword`).value = ""
+        document.getElementById(`confPassword`).value = ""
 
-    //Reset form
-    document.getElementById(`signUpEmail`).value = ""
-    document.getElementById(`signUpPassword`).value = ""
-    document.getElementById(`confPassword`).value = ""
+        //Storing the new train object into the Firestore database
+        database
+            .collection(`users`)
+            .doc(newUser.email)
+            .set(newUser)
 
-    //Document Snapshot & have modal display a thank you message
-    database
-        .collection(`users`)
-        .onSnapshot(({ docs }) => {
-            docs.forEach(user => {
-                let { email, password, confPw } = user.data()
-                document.getElementById(`signUpContent`).innerHTML = `
+        //Document Snapshot & have modal display a thank you message
+        database
+            .collection(`users`)
+            .onSnapshot(({ docs }) => {
+                docs.forEach(user => {
+                    let { email, password, confPw } = user.data()
+                    document.getElementById(`signUpContent`).innerHTML = `
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -58,12 +64,10 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
                 `
+                })
             })
-        })
-
+    }
 })
-
-
 
 
 // incorporating NEWS API ***works with postman***
