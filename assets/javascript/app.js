@@ -70,8 +70,6 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
 })
 
 
-
-
 // incorporating NEWS API ***works with postman***
 // change second line (q=Apple) to say either health, sports, or politics
 
