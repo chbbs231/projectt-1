@@ -28,7 +28,7 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
     console.log(signUpPassword)
     console.log(confPw)
 
-    //Object for new trains
+    //Object for new user
     const newUser = {
         email: signUpEmail,
         password: signUpPassword
@@ -44,8 +44,6 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
     document.getElementById(`signUpEmail`).value = ""
     document.getElementById(`signUpPassword`).value = ""
     document.getElementById(`confPassword`).value = ""
-
-
 })
 
 
