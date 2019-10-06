@@ -15,50 +15,65 @@ firebase.initializeApp(config);
 //Creating a variable for the firebase db
 database = firebase.firestore()
 
-//Click Event On Sign Up Button in Modal to store the info provided
-document.getElementById(`signUp`).addEventListener(`click`, e => {
-    e.preventDefault()
+// //Click Event On Sign Up Button in Modal to store the info provided
+// document.getElementById(`signUp`).addEventListener(`click`, e => {
+//     e.preventDefault()
 
-    //Object for new user
-    const newUser = {
-        email: document.getElementById(`signUpEmail`).value,
-        password: document.getElementById(`signUpPassword`).value,
-        confPw: document.getElementById(`confPassword`).value
-    }
+//     //Object for new user
+//     const newUser = {
+//         email: document.getElementById(`signUpEmail`).value,
+//         password: document.getElementById(`signUpPassword`).value,
+//         confPw: document.getElementById(`confPassword`).value
+//     }
 
-    //Validating the sign up form
-    if (newUser.password !== newUser.confPw) {
-        document.getElementById(`alert`).innerHTML = `
-             <div class="alert alert-info text-center" role="alert" id="alert">Please enter matching passwords.</div>
-        `
-    } else {
-        //Reset form
-        document.getElementById(`signUpEmail`).value = ""
-        document.getElementById(`signUpPassword`).value = ""
-        document.getElementById(`confPassword`).value = ""
+//     //Validating the sign up form
+//     if (newUser.password !== newUser.confPw) {
+//         document.getElementById(`alert`).innerHTML = `
+//              <div class="alert alert-info text-center" role="alert" id="alert">Please enter matching passwords.</div>
+//         `
+//     } else {
+//         //Reset form
+//         document.getElementById(`signUpEmail`).value = ""
+//         document.getElementById(`signUpPassword`).value = ""
+//         document.getElementById(`confPassword`).value = ""
 
-        //Storing the new user object into the Firestore database
-        database
-            .collection(`users`)
-            .doc(newUser.email)
-            .set(newUser)
+//         //Storing the new user object into the Firestore database
+//         database
+//             .collection(`users`)
+//             .doc(newUser.email)
+//             .set(newUser)
 
-        //Have modal display a thank you message
-        document.getElementById(`signUpContent`).innerHTML = `
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <h2>Thanks for Signing Up with BAM!<h2>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                `
-    }
-})
+//         //Have modal display a thank you message
+//         document.getElementById(`signUpContent`).innerHTML = `
+//                 <div class="modal-header">
+//                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+//                     <span aria-hidden="true">&times;</span>
+//                     </button>
+//                 </div>
+//                 <div class="modal-body text-center p-5">
+//                     <h3 class="text-info">Thanks for Signing Up with BAM!<h3>
+//                 </div>
+//                 <div class="modal-footer">
+//                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+//                 </div>
+//                 `
+//     }
+// })
+
+// FirebaseUI config.
+const uiConfig = {
+    signInSuccessUrl: 'index.html',
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+};
+
+// Initialize the FirebaseUI Widget using Firebase.
+const ui = new firebaseui.auth.AuthUI(firebase.auth())
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig)
+
 
 
 // incorporating NEWS API ***works with postman***
