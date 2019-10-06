@@ -42,10 +42,15 @@ li>a:before {
 
 li>a:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
+  -webkit-transform:;
   transform: scaleX(1);
+  -moz-transform:;
+  -ms-transform:;
+  -o-transform:;
 }
 
+
+/* User Sign Out button */
 #signOut{
   display: none;
 }

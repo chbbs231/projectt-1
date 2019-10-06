@@ -29,20 +29,23 @@ const ui = new firebaseui.auth.AuthUI(firebase.auth())
 // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig)
 
-//For User Sign In / Sign Out
+//For User Sign In / Sign Out Buttons
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        document.getElementById(`login`).style.display =  `none`
-        document.getElementById(`signOut`).style.display=`inline`
-    }else{
+        document.getElementById(`login`).style.display = `none`
+        document.getElementById(`signOut`).style.display = `inline`
+    } else {
         document.getElementById(`login`).style.display = `inline`
         document.getElementById(`signOut`).style.display = `none`
     }
 })
 
-document.getElementById(`signOut`).addEventListener(`click`, e =>{
+//User Sign Out
+document.getElementById(`signOut`).addEventListener(`click`, e => {
     firebase.auth().signOut()
 })
+
+
 
 
 // incorporating NEWS API ***works with postman***
