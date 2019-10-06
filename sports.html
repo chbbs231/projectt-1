@@ -20,10 +20,10 @@
 <body>
   <!-- navBar -->
   <div class="row p-1 navColor">
-    <div class="col-7  col-md-10">
+    <div class="col-6  col-md-9 col-lg-10">
       <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
     </div>
-    <div class="col-5 col-md-2">
+    <div class="col-6 col-md-3 col-lg-2">
       <!-- Login trigger modal -->
       <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
@@ -39,7 +39,7 @@
   <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" id="signUpContent">
         <div class="modal-header">
           <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -47,6 +47,7 @@
           </button>
         </div>
         <div class="modal-body">
+          <div id="alert"></div>
           <form>
             <div class="form-group">
               <label for="emailAddress">Email address</label>
@@ -109,7 +110,7 @@
       <a class="nav-link" href="./index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="./sports.html">Sports</a>
+      <a class="nav-link" id="activeNav"  href="./sports.html">Sports</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="./health.html">Health</a>
@@ -119,22 +120,22 @@
     </li>
   </ul>
 
-  <!-- Seach bar -->
-  <div class="row p-5 bg-secondary">
-    <div class="col-2 col-md-4 bg-secondary"></div>
-    <div class="col-8 col-md-4 bg-secondary">
-      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-        <div class="input-group ml-1">
-          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-            class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-          </div>
+<!-- Seach bar -->
+<div class="row p-5 bg-dark">
+  <div class="col-2 col-md-4 bg-dark"></div>
+  <div class="col-8 col-md-4 bg-dark">
+    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+      <div class="input-group ml-1">
+        <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+          class="form-control border-0 bg-light">
+        <div class="input-group-append">
+          <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
-    <div class="col-2 col-md-4 bg-secondary"></div>
   </div>
+  <div class="col-2 col-md-4 bg-dark"></div>
+</div>
 
     <!-- Article Cards -->
     <div class="container mt-2">
@@ -198,9 +199,8 @@
 
   <!-- Page Footer -->
   <footer class="p-5 mt-5 navColor">
-    <p class="text-white text-center"><a href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
+    <p class="text-center"><a class="text-white" href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
   </footer>
-
   
     <!-- firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
