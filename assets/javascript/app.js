@@ -143,23 +143,31 @@ const getPolitics = politics => {
 }
 getSportArticles()*/
 
-const topNewsArt = article => {
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=Sports&apiKey=152c8213a425472a94f4e747aae707b0`)
-    .then(r => r.json())
-    .then(({article}) => {
-        article.forEach(article => {
-            let articleElem = document.createElement('div')
-            articleElem.innerHTML= `
-            <h1>${article.title}</h1>
-            <h2>${article.author}</h2>
-            <img src="${article.urlToImage}" alt= "${article.title}"></img>
-            <h5>${article.content}</h5>`
+const getArticles = article => {
 
-            document.getElementById('topnews').append(articleElm)
+    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+
+        .then(r => r.json())
+        .then(({ articles }) => {
+            // what happens to HTML after search
+            articles.forEach(article => {
+                let articleElem = document.createElement('div')
+                articleElem.innerHTML = `
+        <div class="card border-light mb-3">
+          <div class="card-header">${article.title}</div>
+          <div class="card-body">
+          <img src="${article.urlToImage}" class="card-img-top" style="height: 250px;" alt="${article.title}"
+            <h5 class="card-title">${article.author}</h5>
+            <p class="card-text">${article.content}
+            </p>
+          </div>
+        </div>
+                `
+                document.getElementById('display').append(articleElem)
+            })
         })
-    })
 }
-topNewsArt()
+getArticles()
 /*const getPoliArt = article => {
     fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=politics&apiKey=152c8213a425472a94f4e747aae707b0`)
     .then(r => r.json())
