@@ -110,7 +110,7 @@
       <a class="nav-link" href="./index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="./sports.html">Sports</a>
+      <a class="nav-link" id="activeNav"  href="./sports.html">Sports</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="./health.html">Health</a>
@@ -120,22 +120,22 @@
     </li>
   </ul>
 
-  <!-- Seach bar -->
-  <div class="row p-5 bg-secondary">
-    <div class="col-2 col-md-4 bg-secondary"></div>
-    <div class="col-8 col-md-4 bg-secondary">
-      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-        <div class="input-group ml-1">
-          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-            class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-          </div>
+<!-- Seach bar -->
+<div class="row p-5 bg-dark">
+  <div class="col-2 col-md-4 bg-dark"></div>
+  <div class="col-8 col-md-4 bg-dark">
+    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+      <div class="input-group ml-1">
+        <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+          class="form-control border-0 bg-light">
+        <div class="input-group-append">
+          <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </div>
-    <div class="col-2 col-md-4 bg-secondary"></div>
   </div>
+  <div class="col-2 col-md-4 bg-dark"></div>
+</div>
 
     <!-- Article Cards -->
     <div class="container mt-2">
@@ -199,9 +199,8 @@
 
   <!-- Page Footer -->
   <footer class="p-5 mt-5 navColor">
-    <p class="text-white text-center"><a href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
+    <p class="text-center"><a class="text-white" href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
   </footer>
-
   
     <!-- firebase -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
