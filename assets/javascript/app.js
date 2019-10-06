@@ -37,7 +37,7 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
         document.getElementById(`signUpPassword`).value = ""
         document.getElementById(`confPassword`).value = ""
 
-        //Storing the new train object into the Firestore database
+        //Storing the new user object into the Firestore database
         database
             .collection(`users`)
             .doc(newUser.email)
