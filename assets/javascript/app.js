@@ -68,13 +68,11 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
 
 
 // to get top news for home page
-var url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
-    'apiKey=152c8213a425472a94f4e747aae707b0';
+const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0';
 var req = new Request(url);
 fetch(req)
     .then(function (response) {
-     console.log (  (response.json()));
+      (response.json());
     })
 
 // to get sports articles
@@ -91,11 +89,7 @@ const getSports = sports => {
 
 // to get health articles
 const getHealth = health => {
-    var url = 'https://newsapi.org/v2/everything?' +
-        'q=Health&' +
-        'from=2019-10-04&' +
-        'sortBy=popularity&' +
-        'apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
 
     var req = new Request(url);
 
@@ -107,7 +101,7 @@ const getHealth = health => {
 
 // to get politics articles
 const getPolitics = politics => {
-    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-04&sortBy=politics&apiKey=152c8213a425472a94f4e747aae707b0';
     var req = new Request(url);
     fetch(req)
         .then(function (response) {
@@ -115,30 +109,11 @@ const getPolitics = politics => {
         })
 }
 
-const getSportArt = article => {
 
-    fetch(`https://newsapi.org/v2/everything?q=${article}Sports&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
-
-        .then(r => r.json())
-        .then(({ articles }) => {
-            // what happens to HTML after search
-            articles.forEach(article => {
-                let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
-                <h1>${article.title}</h1>
-                <h2>${article.author}</h2>
-                <img src="${article.urlToImage}" alt="${article.title}">
-                <p>${article.content}</p>
-                `
-                document.getElementById('sportart').append(articleElem)
-            })
-        })
-}
-getSportArt()
 
 const getArticles = article => {
 
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
