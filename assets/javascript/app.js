@@ -15,50 +15,37 @@ firebase.initializeApp(config);
 //Creating a variable for the firebase db
 database = firebase.firestore()
 
-//Click Event On Sign Up Button in Modal to store the info provided
-document.getElementById(`signUp`).addEventListener(`click`, e => {
-    e.preventDefault()
+// FirebaseUI config.
+const uiConfig = {
+    signInSuccessUrl: 'index.html',
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+};
 
-    //Object for new user
-    const newUser = {
-        email: document.getElementById(`signUpEmail`).value,
-        password: document.getElementById(`signUpPassword`).value,
-        confPw: document.getElementById(`confPassword`).value
-    }
+// Initialize the FirebaseUI Widget using Firebase.
+const ui = new firebaseui.auth.AuthUI(firebase.auth())
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig)
 
-    //Validating the sign up form
-    if (newUser.password !== newUser.confPw) {
-        document.getElementById(`alert`).innerHTML = `
-             <div class="alert alert-info text-center" role="alert" id="alert">Please enter matching passwords.</div>
-        `
+//For User Sign In / Sign Out Buttons
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        document.getElementById(`login`).style.display = `none`
+        document.getElementById(`signOut`).style.display = `inline`
     } else {
-        //Reset form
-        document.getElementById(`signUpEmail`).value = ""
-        document.getElementById(`signUpPassword`).value = ""
-        document.getElementById(`confPassword`).value = ""
-
-        //Storing the new train object into the Firestore database
-        database
-            .collection(`users`)
-            .doc(newUser.email)
-            .set(newUser)
-
-        //Have modal display a thank you message
-        document.getElementById(`signUpContent`).innerHTML = `
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <h2>Thanks for Signing Up with BAM!<h2>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                `
+        document.getElementById(`login`).style.display = `inline`
+        document.getElementById(`signOut`).style.display = `none`
     }
 })
+
+//User Sign Out
+document.getElementById(`signOut`).addEventListener(`click`, e => {
+    firebase.auth().signOut()
+})
+
+
 
 
 // incorporating NEWS API ***works with postman***

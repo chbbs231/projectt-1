@@ -12,6 +12,8 @@
   <!-- Font Awsome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
     integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <!-- Firebase User Auth CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Bam</title>
@@ -20,52 +22,15 @@
 <body>
   <!-- navBar -->
   <div class="row p-1 navColor">
-    <div class="col-6  col-md-9 col-lg-10 pl-5">
+    <div class="col-9 col-md-11">
       <h1 class="text-white text-center pl-5">BAM</h1>
     </div>
-    <div class="col-6 col-md-3 col-lg-2">
+    <div class="col-3 col-md-1" id="loggedInMsg">
       <!-- Login trigger modal -->
       <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
-      <!-- Sign Up trigger modal -->
-      <button type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal" data-target="#signUpModal">
-        Sign Up
-      </button>
-    </div>
-  </div>
-
-  <!-- Sign Up Modal -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" id = "signUpContent">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div id="alert"></div>
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label for="password">Confirm Password</label>
-              <input type="password" class="form-control" id="confPassword" placeholder="Confirm Password">
-            </div>
-            <button id="signUp" type="submit" class="btn btn-outline-info mb-3">Sign Up</button>
-            <div class="modal-footer"></div>
-          </form>
-        </div>
-      </div>
+      <!-- Sign Out Button -->
+    <button id="signOut" type="button" class="btn btn-outline-light mt-1 m-1">Sign Out</button>
     </div>
   </div>
 
@@ -81,30 +46,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="remember">
-              <label class="form-check-label" for="remember">Remember Me</label>
-            </div>
-            <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
-            <div class="modal-footer"></div>
-          </form>
+        <div id="firebaseui-auth-container"></div>
         </div>
+        <div class="modal-footer"></div>
       </div>
     </div>
   </div>
 
   <!-- subNav -->
-  <ul class="nav justify-content-center p-2 subNav">
+  <ul class="nav justify-content-center p-1 subNav">
     <li class="nav-item subNav">
       <a class="nav-link" id="activeNav" href="./index.html">Home</a>
     </li>
@@ -205,6 +155,9 @@
   <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
   <!-- Firestore -->
   <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+<!-- Firebase User Auth -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
   <!-- Custom JS -->
   <script src="./assets/javascript/app.js"></script>
   <!-- bootstrap -->
