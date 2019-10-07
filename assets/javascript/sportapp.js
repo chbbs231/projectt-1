@@ -66,14 +66,14 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
 
 
 
-
+/*
 // to get top news for home page
-const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0';
+const url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
 var req = new Request(url);
 fetch(req)
     .then(function (response) {
      console.log (response.json());
-    })
+    })*/
 
 // to get sports articles
 const getSports = sports => {
@@ -101,11 +101,7 @@ const getHealth = health => {
 
 // to get politics articles
 const getPolitics = politics => {
-    var url = 'https://newsapi.org/v2/everything?' +
-        'q=Politics&' +
-        'from=2019-10-04&' +
-        'sortBy=popularity&' +
-        'apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
     var req = new Request(url);
     fetch(req)
         .then(function (response) {
@@ -114,8 +110,7 @@ const getPolitics = politics => {
 }
 
 const getSportArt = article => {
-
-    fetch(`https://newsapi.org/v2/everything?q=${article}Sports&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
@@ -126,10 +121,10 @@ const getSportArt = article => {
                 ` <div class="card border-light mb-3">
                   <div class="card-header">${article.title}</div>
                   <div class="card-body">
-                  <img src="${article.urlToImage}" class="card-img-top" style="height: 250px;" alt="${article.title}"
+                  <img src="${article.urlToImage}" class="card-img-top" style="height: 150px;" alt="${article.title}"
                     <h5 class="card-title">${article.author}</h5>
                     <p class="card-text">${article.content}</p>
-                    <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                    <button type="button" class="btn btn-primary btn-sm">Read More</button>
                   </div>
                 </div>
                         `

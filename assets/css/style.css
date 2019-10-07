@@ -48,7 +48,9 @@
     background-color: rgb(12, 27, 43)
   }
 
-.incard{display: inline-block;
-
-}
-  
+ .sportscard{
+  margin: 0% auto;
+  text-align: center; 
+  width: 425px;
+  background-color: rgb(12, 27, 43)
+ } 

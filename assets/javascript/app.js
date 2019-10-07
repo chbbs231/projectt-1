@@ -124,7 +124,7 @@ const getArticles = article => {
         <div class="card border-light mb-3">
           <div class"incard" class="card-header">${article.title}</div>
           <div class="card-body">
-          <img src="${article.urlToImage}" class="card-img-top" style="height: 0% auto;" alt="${article.title}"
+          <img src="${article.urlToImage}" class="card-img-top" style="height: 150px" alt="${article.title}"
             <h5 class="card-title">${article.author}</h5>
             <p class="card-text">${article.content}</p>
             <button type="button" class="btn btn-primary btn-sm">Read more</button>
@@ -137,28 +137,4 @@ const getArticles = article => {
 }
 getArticles()
 
-const poliArticles = article => {
 
-    fetch(`https://newsapi.org/v2/everything?q=${article}Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
-
-        .then(r => r.json())
-        .then(({ articles }) => {
-            // what happens to HTML after search
-            articles.forEach(article => {
-                let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
-        <div class="card border-light mb-3">
-          <div class="card-header">${article.title}</div>
-          <div class="card-body">
-          <img src="${article.urlToImage}" class="card-img-top" style="height: 250px;" alt="${article.title}"
-            <h5 class="card-title">${article.author}</h5>
-            <p class="card-text">${article.content}
-            </p>
-          </div>
-        </div>
-                `
-                document.getElementById('poliart').append(articleElem)
-            })
-        })
-}
-poliArticles()
