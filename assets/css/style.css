@@ -20,37 +20,47 @@
   .subNav {
     color: #6ea4bf;
   }
-  
-  img {
-    height: 300px;
-    width: 50px;
-    padding-bottom: 10px
+  .imgcard { 
+    height: 350px;
+    width: 190px;
+    padding-left: 15px;
+    padding-top: 10px;
   }
-  
-  .cardpics {
-    height: 120px;
-    width: 150px;
-    padding-top: 30px;
-    padding-left: 10px;
-  }
-  
   #search {
     float: right;
   }
-  .cardbody{
-    height: 75px;
-    width:50px;
+  .inner{
+    
+    text-align: center; 
+    height: 20px;
+    width: 475px;
+    background-color: rgb(30, 39, 48)
   }
-  .indexcard{ 
+  .card-body{
     margin: 0% auto;
     text-align: center; 
-    width: 425px;
-    background-color: rgb(12, 27, 43)
+    height:auto;
+    width: 600px;
+    background-color: rgb(202, 202, 202);
+    text-align-last: auto;
+    font-size: 15px;
+  }
+  .indexcard{ 
+      margin: 0% auto;
+      text-align: center; 
+      width: 600px;
+      background-color: rgb(12, 27, 43)
   }
 
  .sportscard{
-  margin: 0% auto;
-  text-align: center; 
-  width: 425px;
-  background-color: rgb(12, 27, 43)
+    margin: 0% auto;
+    text-align: center; 
+    width: 700px;
+    background-color: rgb(12, 27, 43)
  } 
+ .heathlcard{
+  margin: 0% auto;
+    text-align: center; 
+    width: 700px;
+    background-color: rgb(12, 27, 43)
+ }

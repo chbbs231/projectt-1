@@ -63,33 +63,9 @@ document.getElementById(`signUp`).addEventListener(`click`, e => {
 
 })
 
-
-
-
-/*
-// to get top news for home page
-const url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
-var req = new Request(url);
-fetch(req)
-    .then(function (response) {
-     console.log (response.json());
-    })*/
-
-// to get sports articles
-const getSports = sports => {
-    var url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
-
-    var req = new Request(url);
-
-    fetch(req)
-        .then(function (response) {
-            console.log(response.json());
-        })
-}
-
 // to get health articles
 const getHealth = health => {
-    var url = 'https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=health&apiKey=152c8213a425472a94f4e747aae707b0';
 
     var req = new Request(url);
 
@@ -99,38 +75,46 @@ const getHealth = health => {
         })
 }
 
-// to get politics articles
-const getPolitics = politics => {
-    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
-    var req = new Request(url);
-    fetch(req)
-        .then(function (response) {
-            console.log(response.json());
-        })
-}
 
-const getSportArt = article => {
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
+const healthDis = article => {
+    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=health&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
             // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
-                articleElem.innerHTML =
+                articleElem.innerHTML = `
+        <div class"outer" class="card border-light mb-3">
+          <div class"inner" class="card-header">${article.title}</div>
+          <div class="card-body">
+          <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
+           <span><p> <h5 class="card-title">${article.author}</h5></p></span>
+            <p class="card-text">${article.content}</p>
+            <button type="rmbutton" class="btn btn-primary btn-sm">Read more</button>
+          </div>
+        </div>
+        <div id= "rmmodal" class= "modal"></div>
                 `
-                <div class"outer" class="card border-light mb-3">
-                  <div class"inner" class="card-header">${article.title}</div>
-                  <div class="card-body">
-                  <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
-                   <span><p> <h5 class="card-title">${article.author}</h5></p></span>
-                    <p class="card-text">${article.content}</p>
-                    <button type="rmbutton" class="btn btn-primary btn-sm">Read more</button>
-                  </div>
-                </div>
-                        `
-                document.getElementById('sportart').append(articleElem)
+                document.getElementById('hdisplay').append(articleElem)
             })
         })
 }
-getSportArt()
+healthDis()
+
+document.getElementById('rmbutton').addEventListener('click', e=>{
+// Get the modal
+var modal = document.getElementById("rmmodal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("rmbutton");
+
+btn.onclick = function() {
+    modal.style.display = "block";
+  }
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+})

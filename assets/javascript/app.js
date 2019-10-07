@@ -1,4 +1,4 @@
-// initializing firebase***
+// Firebase Configuration
 const config = {
     apiKey: 'AIzaSyC1U8sQWVOz6FkYyxtNCBSRl8XDNZY24ao',
     authDomain: 'projectonebam.firebaseapp.com',
@@ -12,62 +12,55 @@ const config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-//Creating a vaiable for the db
+//Creating a variable for the firebase db
 database = firebase.firestore()
 
-//Click Event On Sign Up Button in Modal to store the info provided
-document.getElementById(`signUp`).addEventListener(`click`, e => {
-    e.preventDefault()
+/*// FirebaseUI config.
+const uiConfig = {
+    signInSuccessUrl: 'index.html',
+    signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    ],
+};
 
-    //Object for new user
-    const newUser = {
-        email: document.getElementById(`signUpEmail`).value,
-        password: document.getElementById(`signUpPassword`).value,
-        confPw: document.getElementById(`confPassword`).value
+// Initialize the FirebaseUI Widget using Firebase.
+const ui = new firebaseui.auth.AuthUI(firebase.auth())
+// The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig)
+
+//For User Sign In / Sign Out Buttons
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        document.getElementById(`login`).style.display = `none`
+        document.getElementById(`signOut`).style.display = `inline`
+    } else {
+        document.getElementById(`login`).style.display = `inline`
+        document.getElementById(`signOut`).style.display = `none`
     }
-    //TESTING - console log object of input values on submit
-    console.log(newUser)
+})*/
 
-    //Storing the new train object into the Firestore database
-    database
-        .collection(`users`)
-        .doc(newUser.email)
-        .set(newUser)
-
-    //Reset form
-    document.getElementById(`signUpEmail`).value = ""
-    document.getElementById(`signUpPassword`).value = ""
-    document.getElementById(`confPassword`).value = ""
-
-    //Document Snapshot & have modal display a thank you message
-    database
-        .collection(`users`)
-        .onSnapshot(({ docs }) => {
-            docs.forEach(user => {
-                let { email, password, confPw } = user.data()
-                document.getElementById(`signUpContent`).innerHTML = `
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body text-center">
-                    <h2>Thanks for Signing Up with BAM!<h2>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-                `
-            })
-        })
-
+//User Sign Out
+document.getElementById(`signOut`).addEventListener(`click`, e => {
+    firebase.auth().signOut()
+    document.getElementById(`signedOutAlert`).innerHTML = `
+   <div class="alert alert-info alert-dismissible fade show text-center" role="alert">
+  <strong>You're Signed Out!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+   `
 })
 
 
 
 
+// incorporating NEWS API ***works with postman***
+// change second line (q=Apple) to say either health, sports, or politics
 
 // to get top news for home page
+
 const url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0';
 var req = new Request(url);
 fetch(req)
@@ -121,20 +114,22 @@ const getArticles = article => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML = `
-        <div class="card border-light mb-3">
-          <div class"incard" class="card-header">${article.title}</div>
-          <div class="card-body">
-          <img src="${article.urlToImage}" class="card-img-top" style="height: 150px" alt="${article.title}"
-            <h5 class="card-title">${article.author}</h5>
-            <p class="card-text">${article.content}</p>
-            <button type="button" class="btn btn-primary btn-sm">Read more</button>
-          </div>
-        </div>
-                `
+                <div class"outer" class="card border-light mb-3">
+                  <div class"inner" class="card-header">${article.title}</div>
+                  <div class="card-body">
+                  <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
+                   <span><p> <h5 class="card-title">${article.author}</h5></p></span>
+                    <p class="card-text">${article.content}</p>
+                    <button type="rmbutton" class="btn btn-primary btn-sm">Read more</button>
+                  </div>
+                </div>
+                        `
                 document.getElementById('display').append(articleElem)
             })
         })
 }
 getArticles()
+
+
 
 
