@@ -124,12 +124,29 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
     //Empty the search input
     document.getElementById(`searchInput`).value = ``
 
-    fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
-        .then(r => r.json())
-        .then(article => {
-            console.log(article)
-        })
-        .catch(e => console.log(e))
+    const getSearch = search => {
+        //Get the search content from the API
+        fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+            .then(r => r.json())
+            .then(({ articles }) => {
+                articles.forEach(article => {
+                    let articleElem = document.createElement('div')
+                    articleElem.innerHTML =
+                        ` <div class="card border-light mb-3">
+                            <div class="card-header">${article.title}</div>
+                            <div class="card-body">
+                            <img src="${article.urlToImage}" class="card-img-top" style="height: 150px;" alt="${article.title}"
+                                <h5 class="card-title">${article.author}</h5>
+                                <p class="card-text">${article.content}</p>
+                                <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                            </div>
+                            </div>
+                        `
+                    document.getElementById(`searchArticles`).append(articleElem)
+                })
 
-
+            })
+            .catch(e => console.log(e))
+    }
+    getSearch()
 })
