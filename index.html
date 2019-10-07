@@ -12,8 +12,8 @@
   <!-- Font Awsome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
     integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <!-- Firebase User Auth CSS -->
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
+  <!-- Firebase User Auth CSS -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Bam</title>
@@ -30,7 +30,7 @@
       <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
       <!-- Sign Out Button -->
-    <button id="signOut" type="button" class="btn btn-outline-light mt-1 m-1">Sign Out</button>
+      <button id="signOut" type="button" class="btn btn-outline-light mt-1 m-1">Sign Out</button>
     </div>
   </div>
 
@@ -38,22 +38,24 @@
   <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signInModalTitle">Login</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content" id="modalColor">
+        <div class="modal-header mb-4">
+          <h3 class="modal-title text-white" id="signInModalTitle">Login</h3>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-        <div id="firebaseui-auth-container"></div>
+          <div id="firebaseui-auth-container" class="mb-5 pb-4"></div>
         </div>
-        <div class="modal-footer"></div>
       </div>
     </div>
   </div>
 
   <!-- subNav -->
+  <div class="container">
+    <div id="signedOutAlert" class="m-3"></div>
+  </div>
   <ul class="nav justify-content-center p-1 subNav">
     <li class="nav-item subNav">
       <a class="nav-link" id="activeNav" href="./index.html">Home</a>
@@ -148,14 +150,14 @@
   <!-- Page Footer -->
   <footer class="p-5 mt-5 navColor">
     <p class="text-center"><a class="text-white" href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
-</footer>
+  </footer>
 
   <!-- firebase -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
   <!-- Firestore -->
   <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
-<!-- Firebase User Auth -->
+  <!-- Firebase User Auth -->
   <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
   <!-- Custom JS -->

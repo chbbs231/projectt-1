@@ -1,4 +1,5 @@
 /* NavBar Styling */
+
 .navColor {
   background: rgb(0, 0, 4);
   background: radial-gradient(circle, rgba(0, 0, 4, 1) 0%, rgba(4, 63, 133, 1) 100%);
@@ -42,15 +43,22 @@ li>a:before {
 
 li>a:hover:before {
   visibility: visible;
-  -webkit-transform:;
+  -webkit-transform: ;
   transform: scaleX(1);
-  -moz-transform:;
-  -ms-transform:;
-  -o-transform:;
+  -moz-transform: ;
+  -ms-transform: ;
+  -o-transform: ;
 }
 
+/* Login Modal */
+
+#modalColor {
+  background: rgb(0, 0, 4);
+  background: radial-gradient(circle, rgba(0, 0, 4, 1) 0%, rgba(4, 63, 133, 1) 100%);
+}
 
 /* User Sign Out button */
-#signOut{
+
+#signOut {
   display: none;
 }

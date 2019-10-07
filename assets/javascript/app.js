@@ -43,6 +43,14 @@ firebase.auth().onAuthStateChanged(user => {
 //User Sign Out
 document.getElementById(`signOut`).addEventListener(`click`, e => {
     firebase.auth().signOut()
+    document.getElementById(`signedOutAlert`).innerHTML = `
+   <div class="alert alert-info alert-dismissible fade show text-center" role="alert">
+  <strong>You're Signed Out!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+   `
 })
 
 
