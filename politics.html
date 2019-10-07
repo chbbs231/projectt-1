@@ -12,185 +12,137 @@
   <!-- Font Awsome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
     integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+  <!-- Firebase User Auth CSS -->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css" />
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/icon.png">
   <title>Politics</title>
 </head>
 
 <body>
   <!-- navBar -->
   <div class="row p-1 navColor">
-    <div class="col-6  col-md-9 col-lg-10">
-      <h1 class="text-center text-white ml-5 pl-5">BAM</h1>
+    <div class="col-9 col-md-11">
+      <h1 class="text-white text-center pl-5">BAM</h1>
     </div>
-    <div class="col-6 col-md-3 col-lg-2">
+    <div class="col-3 col-md-1" id="loggedInMsg">
       <!-- Login trigger modal -->
       <button id="login" type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal"
         data-target="#signInModal">Login</button>
-      <!-- Sign Up trigger modal -->
-      <button type="button" class="btn btn-outline-light mt-1 m-1" data-toggle="modal" data-target="#signUpModal">
-        Sign Up
-      </button>
+      <!-- Sign Out Button -->
+      <button id="signOut" type="button" class="btn btn-outline-light mt-1 m-1">Sign Out</button>
     </div>
   </div>
-  </div>
-  
-  <!-- Sign Up Modal -->
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" id="signUpContent">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signUpModalLabel">Sign Up</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div id="alert"></div>
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="signUpEmail" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="signUpPassword" placeholder="Password">
-            </div>
-            <div class="form-group">
-              <label for="password">Confirm Password</label>
-              <input type="password" class="form-control" id="confPassword" placeholder="Confirm Password">
-            </div>
-            <button id="signUp" type="submit" class="btn btn-outline-info mb-3">Sign Up</button>
-            <div class="modal-footer"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+
   <!-- login Modal -->
   <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalTitle"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="signInModalTitle">Login</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content" id="modalColor">
+        <div class="modal-header mb-4">
+          <h3 class="modal-title text-white" id="signInModalTitle">Login</h3>
+          <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="emailAddress">Email address</label>
-              <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="remember">
-              <label class="form-check-label" for="remember">Remember Me</label>
-            </div>
-            <button id="signIn" type="submit" class="btn btn-outline-info mb-3">Sign In</button>
-            <div class="modal-footer"></div>
-          </form>
+          <div id="firebaseui-auth-container" class="mb-5 pb-4"></div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- subNav -->
-  <ul class="nav justify-content-center subNav p-2">
-    <li class="nav-item">
+  <div class="container">
+    <div id="signedOutAlert" class="ml-3 mr-3"></div>
+  </div>
+  <ul class="nav justify-content-center p-1 subNav">
+    <li class="nav-item subNav">
       <a class="nav-link" href="./index.html">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item subNav">
       <a class="nav-link" href="./sports.html">Sports</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item subNav">
       <a class="nav-link" href="./health.html">Health</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item subNav">
       <a class="nav-link" id="activeNav" href="./politics.html">Politics</a>
     </li>
   </ul>
 
-<!-- Seach bar -->
-<div class="row p-5 bg-dark">
-  <div class="col-2 col-md-4 bg-dark"></div>
-  <div class="col-8 col-md-4 bg-dark">
-    <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-      <div class="input-group ml-1">
-        <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-          class="form-control border-0 bg-light">
-        <div class="input-group-append">
-          <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+  <!-- Seach bar -->
+  <div class="row p-5 bg-dark">
+    <div class="col-2 col-md-4 bg-dark"></div>
+    <div class="col-8 col-md-4 bg-dark">
+      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+        <div class="input-group ml-1">
+          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+            class="form-control border-0 bg-light">
+          <div class="input-group-append">
+            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+          </div>
         </div>
       </div>
     </div>
+    <div class="col-2 col-md-4 bg-dark"></div>
   </div>
-  <div class="col-2 col-md-4 bg-dark"></div>
-</div>
 
-    <!-- Article Cards -->
-    <div class="container mt-2">
-      <div class="row">
-        <div class="col-12 col-md-3">
-          <div class="card border-light mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
+  <!-- Article Cards -->
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <div class="card border-light mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
           </div>
-          <div class="card border-light mb-3">
-            <div class="card-header">Header</div>
+        </div>
+        <div class="card border-light mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="row">
+          <div class="card mb-3">
+            <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6">
-          <div class="row">
-            <div class="card mb-3">
-              <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
+      </div>
+      <div class="col-12 col-md-3">
+        <div class="card border-light mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
           </div>
         </div>
-        <div class="col-12 col-md-3">
-          <div class="card border-light mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
-          </div>
-          <div class="card border-light mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Light card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.
-              </p>
-            </div>
+        <div class="card border-light mb-3">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Light card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
           </div>
         </div>
       </div>
@@ -201,19 +153,27 @@
   <footer class="p-5 mt-5 navColor">
     <p class="text-center"><a class="text-white" href='https://newsapi.org' target='_blank'>Powered by News API</a></p>
   </footer>
-  
+
   <!-- firebase -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
   <!-- Firestore -->
   <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+  <!-- Firebase User Auth -->
+  <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
   <!-- Custom JS -->
   <script src="./assets/javascript/app.js"></script>
-<!-- bootstrap -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
