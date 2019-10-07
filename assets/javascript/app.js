@@ -54,9 +54,8 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
 })
 
 
-
-
-// incorporating NEWS API ***works with postman***
+// Incorporating NEWS API 
+//Tested with postman
 // change second line (q=Apple) to say either health, sports, or politics
 
 // to get top news for home page
@@ -114,3 +113,23 @@ const getPolitics = politics => {
             console.log(response.json());
         })
 }
+
+
+// Search Results
+document.getElementById(`searchBtn`).addEventListener(`click`, e => {
+    e.preventDefault()
+    //Grab the users search
+    let userSearch = document.getElementById(`searchInput`).value
+    console.log(userSearch)
+    //Empty the search input
+    document.getElementById(`searchInput`).value = ``
+
+    fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+        .then(r => r.json())
+        .then(article => {
+            console.log(article)
+        })
+        .catch(e => console.log(e))
+
+
+})
