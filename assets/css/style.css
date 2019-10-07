@@ -1,3 +1,5 @@
+/* NavBar Styling */
+
 .navColor {
     background-color: #6ea4bf;
   }
@@ -64,3 +66,64 @@
     width: 700px;
     background-color: rgb(12, 27, 43)
  }
+  background: rgb(0, 0, 4);
+  background: radial-gradient(circle, rgba(0, 0, 4, 1) 0%, rgba(4, 63, 133, 1) 100%);
+}
+
+.subNav {
+  color: #043f85;
+  font-size: 20px;
+}
+
+/* Nav links animation */
+
+#activeNav {
+  color: #1195c6;
+}
+
+li>a {
+  position: relative;
+  color: #043f85;
+  text-decoration: none;
+}
+
+li>a:hover {
+  color: #1195c6;
+}
+
+li>a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #043f85;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+li>a:hover:before {
+  visibility: visible;
+  -webkit-transform: ;
+  transform: scaleX(1);
+  -moz-transform: ;
+  -ms-transform: ;
+  -o-transform: ;
+}
+
+/* Login Modal */
+
+#modalColor {
+  background: rgb(0, 0, 4);
+  background: radial-gradient(circle, rgba(0, 0, 4, 1) 0%, rgba(4, 63, 133, 1) 100%);
+}
+
+/* User Sign Out button */
+
+#signOut {
+  display: none;
+}

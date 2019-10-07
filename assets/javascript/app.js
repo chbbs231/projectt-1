@@ -15,7 +15,7 @@ firebase.initializeApp(config);
 //Creating a variable for the firebase db
 database = firebase.firestore()
 
-/*// FirebaseUI config.
+// FirebaseUI config.
 const uiConfig = {
     signInSuccessUrl: 'index.html',
     signInOptions: [
@@ -38,7 +38,7 @@ firebase.auth().onAuthStateChanged(user => {
         document.getElementById(`login`).style.display = `inline`
         document.getElementById(`signOut`).style.display = `none`
     }
-})*/
+})
 
 //User Sign Out
 document.getElementById(`signOut`).addEventListener(`click`, e => {
