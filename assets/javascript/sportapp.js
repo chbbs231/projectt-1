@@ -107,7 +107,11 @@ const getHealth = health => {
 
 // to get politics articles
 const getPolitics = politics => {
-    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?' +
+        'q=Politics&' +
+        'from=2019-10-04&' +
+        'sortBy=popularity&' +
+        'apiKey=152c8213a425472a94f4e747aae707b0';
     var req = new Request(url);
     fetch(req)
         .then(function (response) {
@@ -124,66 +128,19 @@ const getSportArt = article => {
             // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
-                <h1>${article.title}</h1>
-                <h2>${article.author}</h2>
-                <img src="${article.urlToImage}" alt="${article.title}">
-                <p>${article.content}</p>
-                `
+                articleElem.innerHTML =
+                ` <div class="card border-light mb-3">
+                  <div class="card-header">${article.title}</div>
+                  <div class="card-body">
+                  <img src="${article.urlToImage}" class="card-img-top" style="height: 250px;" alt="${article.title}"
+                    <h5 class="card-title">${article.author}</h5>
+                    <p class="card-text">${article.content}</p>
+                    <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                  </div>
+                </div>
+                        `
                 document.getElementById('sportart').append(articleElem)
             })
         })
 }
 getSportArt()
-
-const getArticles = article => {
-
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-04&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
-
-        .then(r => r.json())
-        .then(({ articles }) => {
-            // what happens to HTML after search
-            articles.forEach(article => {
-                let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
-        <div class="card border-light mb-3">
-          <div class"incard" class="card-header">${article.title}</div>
-          <div class="card-body">
-          <img src="${article.urlToImage}" class="card-img-top" style="height: 0% auto;" alt="${article.title}"
-            <h5 class="card-title">${article.author}</h5>
-            <p class="card-text">${article.content}</p>
-            <button type="button" class="btn btn-primary btn-sm">Read more</button>
-          </div>
-        </div>
-                `
-                document.getElementById('display').append(articleElem)
-            })
-        })
-}
-getArticles()
-
-const poliArticles = article => {
-
-    fetch(`https://newsapi.org/v2/everything?q=${article}Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
-
-        .then(r => r.json())
-        .then(({ articles }) => {
-            // what happens to HTML after search
-            articles.forEach(article => {
-                let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
-        <div class="card border-light mb-3">
-          <div class="card-header">${article.title}</div>
-          <div class="card-body">
-          <img src="${article.urlToImage}" class="card-img-top" style="height: 250px;" alt="${article.title}"
-            <h5 class="card-title">${article.author}</h5>
-            <p class="card-text">${article.content}
-            </p>
-          </div>
-        </div>
-                `
-                document.getElementById('poliart').append(articleElem)
-            })
-        })
-}
-poliArticles()

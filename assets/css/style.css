@@ -34,11 +34,21 @@
     padding-left: 10px;
   }
   
-  .nexcar {
-    height: 140px;
-    border: 1px
-  }
-  
   #search {
     float: right;
   }
+  .cardbody{
+    height: 75px;
+    width:50px;
+  }
+  .indexcard{ 
+    margin: 0% auto;
+    text-align: center; 
+    width: 425px;
+    background-color: rgb(12, 27, 43)
+  }
+
+.incard{display: inline-block;
+
+}
+  
