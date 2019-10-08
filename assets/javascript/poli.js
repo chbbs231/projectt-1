@@ -77,8 +77,8 @@ const poliArt = article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
                 `
-                <div class"outer" class="card border-light mb-3">
-                  <div class"inner" class="card-header">${article.title}</div>
+                <div class= "outer" class="card border-light mb-3">
+                  <div class= "inner" class="card-header">${article.title}</div>
                   <div class="card-body">
                   <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
                    <span><p> <h5 class="card-title">${article.author}</h5></p></span>
