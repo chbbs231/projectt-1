@@ -62,3 +62,30 @@ li>a:hover:before {
 #signOut {
   display: none;
 }
+
+.inner{
+  text-align: center; 
+  height: 20px;
+  width: 475px;
+  background-color: rgb(30, 39, 48)
+}
+
+.artcard{ 
+    margin: 0% auto;
+    text-align: center; 
+    width: 600px;
+    background-color: rgb(12, 27, 43)
+}
+
+.sportscard{
+  margin: 0% auto;
+  text-align: center; 
+  width: 700px;
+  background-color: rgb(12, 27, 43)
+} 
+.heathlcard{
+margin: 0% auto;
+  text-align: center; 
+  width: 700px;
+  background-color: rgb(12, 27, 43)
+}
