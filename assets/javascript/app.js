@@ -180,7 +180,7 @@ getPolitics()
 // Search Results
 document.getElementById(`searchBtn`).addEventListener(`click`, e => {
     e.preventDefault()
-    
+
     //Grab the users search
     let userSearch = document.getElementById(`searchInput`).value
     console.log(userSearch)

@@ -66,7 +66,7 @@
       <a class="nav-link" href="./sports.html">Sports</a>
     </li>
     <li class="nav-item subNav">
-      <a class="nav-link"  id="activeNav"  href="./health.html">Health</a>
+      <a class="nav-link" id="activeNav" href="./health.html">Health</a>
     </li>
     <li class="nav-item subNav">
       <a class="nav-link" href="./politics.html">Politics</a>
@@ -74,25 +74,29 @@
   </ul>
 
   <!-- Seach bar -->
-  <div class="row p-5 bg-dark">
-    <div class="col-1 col-md-4 bg-dark"></div>
-    <div class="col-10 col-md-4 bg-dark">
-      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-        <div class="input-group ml-1">
-          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-            class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+  <form>
+    <div class="row p-5 bg-dark">
+      <div class="col-1 col-md-4 bg-dark"></div>
+      <div class="col-10 col-md-4 bg-dark">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+          <div class="input-group ml-1">
+            <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+              class="form-control border-0 bg-light">
+            <div class="input-group-append">
+              <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i
+                  class="fa fa-search"></i></button>
+            </div>
           </div>
         </div>
       </div>
+      <div class="col-1 col-md-4 bg-dark"></div>
     </div>
-    <div class="col-1 col-md-4 bg-dark"></div>
-  </div>
+  </form>
 
   <!-- Article Cards -->
   <div class="container mt-2">
-      <div id="politicsart"></div>
+    <div id="searchArticles"></div>
+    <div id="politicsart"></div>
   </div>
 
   <!-- Page Footer -->
