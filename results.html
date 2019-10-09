@@ -74,79 +74,28 @@
   </ul>
 
   <!-- Seach bar -->
-  <div class="row p-5 bg-dark">
-    <div class="col-2 col-md-4 bg-dark"></div>
-    <div class="col-8 col-md-4 bg-dark">
-      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-        <div class="input-group ml-1">
-          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-            class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-2 col-md-4 bg-dark"></div>
-  </div>
-
-  <!-- Article Cards -->
-  <div class="container mt-2">
-    <div class="row">
-      <div class="col-12 col-md-3">
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-6">
-        <div class="row">
-          <div class="card mb-3">
-            <img src="./assets/images/placeholder.png" class="card-img-top" style="height: 250px;" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  <form>
+    <div class="row p-5 bg-dark">
+      <div class="col-2 col-md-4 bg-dark"></div>
+      <div class="col-8 col-md-4 bg-dark">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+          <div class="input-group ml-1">
+            <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+              class="form-control border-0 bg-light">
+            <div class="input-group-append">
+              <button id="searchBtn" type="submit" class="btn btn-link text-primary searchBtn" data-search="search"><i
+                  class="fa fa-search"></i></button>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-3">
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-        <div class="card border-light mb-3">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="col-2 col-md-4 bg-dark"></div>
     </div>
+  </form>
+
+  <!-- Article Cards -->
+  <div class="container mt-2">
+    <div id="searchArticles"></div>
   </div>
 
   <!-- Page Footer -->

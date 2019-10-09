@@ -43,11 +43,11 @@ li>a:before {
 
 li>a:hover:before {
   visibility: visible;
-  -webkit-transform: ;
+  -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  -moz-transform: ;
-  -ms-transform: ;
-  -o-transform: ;
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
 }
 
 /* Login Modal */
