@@ -64,7 +64,7 @@ const getPolitics = politics => {
 }
 
 const poliArt = article => {
-    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-07&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {

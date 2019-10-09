@@ -59,7 +59,7 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
 
 // to get sports articles
 const getSports = sports => {
-    var url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-07&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
 
     var req = new Request(url);
 
@@ -94,3 +94,7 @@ const getSportArt = article => {
         })
 }
 getSportArt()
+
+const readmore = function(
+    let
+)
