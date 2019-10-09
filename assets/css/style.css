@@ -62,3 +62,36 @@ li>a:hover:before {
 #signOut {
   display: none;
 }
+
+
+
+/* card elements */
+.artcard{ 
+    margin: 0% auto;
+    text-align: center; 
+    width: 600px;
+    
+}
+.card-body{
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    height:325px ;
+    image-rendering: auto;
+    
+}
+.card-text{
+height: auto;
+font-size-adjust: inherit;
+
+}
+.outer{
+  width: auto;
+  
+}
+.inner{
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+}

@@ -53,32 +53,34 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
    `
 })
 
-// Incorporating NEWS API 
-//Tested with postman
-// change second line (q=Apple) to say either health, sports, or politics
 
 // to get top news for home page
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-          'apiKey=152c8213a425472a94f4e747aae707b0';
-var req = new Request(url);
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    })
 
-const getArticles = article => {
 
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0`)
+// to get sports articles
+const getSports = sports => {
+    var url = 'https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0';
+
+    var req = new Request(url);
+
+    fetch(req)
+        .then(function (response) {
+            console.log(response.json());
+        })
+}
+
+const getSportArt = article => {
+    fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
             // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
-                articleElem.innerHTML = `
+                articleElem.innerHTML =
+                `
                 <div class= "outer" class="card border-light mb-3">
-                  <div class="inner" class="card-header">${article.title}</div>
+                  <div class= "inner" class="card-header">${article.title}</div>
                   <div class="card-body">
                   <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
                    <span><p> <h5 class="card-title">${article.author}</h5></p></span>
@@ -87,47 +89,8 @@ const getArticles = article => {
                   </div>
                 </div>
                         `
-                document.getElementById('display').append(articleElem)
+                document.getElementById('sportart').append(articleElem)
             })
         })
 }
-
-getArticles()
-
-
-// Search Results
-document.getElementById(`searchBtn`).addEventListener(`click`, e => {
-    e.preventDefault()
-    //Grab the users search
-    let userSearch = document.getElementById(`searchInput`).value
-    console.log(userSearch)
-    //Empty the search input
-    document.getElementById(`searchInput`).value = ``
-
-    const getSearch = search => {
-        //Get the search content from the API
-        fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
-            .then(r => r.json())
-            .then(({ articles }) => {
-                articles.forEach(article => {
-                    let articleElem = document.createElement('div')
-                    articleElem.innerHTML =
-                        ` <div class="card border-light mb-3">
-                            <div class="card-header">${article.title}</div>
-                            <div class="card-body">
-                            <img src="${article.urlToImage}" class="card-img-top" style="height: 150px;" alt="${article.title}"
-                                <h5 class="card-title">${article.author}</h5>
-                                <p class="card-text">${article.content}</p>
-                                <button type="button" class="btn btn-primary btn-sm">Read More</button>
-                            </div>
-                            </div>
-                        `
-                    document.getElementById(`searchArticles`).append(articleElem)
-                })
-
-            })
-            .catch(e => console.log(e))
-    }
-    getSearch()
-})
-
+getSportArt()
