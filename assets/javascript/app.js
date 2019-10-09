@@ -53,7 +53,6 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
    `
 })
 
-
 // Incorporating NEWS API 
 //Tested with postman
 // change second line (q=Apple) to say either health, sports, or politics
