@@ -74,21 +74,24 @@
   </ul>
 
   <!-- Seach bar -->
-  <div class="row p-5 bg-dark">
-    <div class="col-2 col-md-4 bg-dark"></div>
-    <div class="col-8 col-md-4 bg-dark">
-      <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
-        <div class="input-group ml-1">
-          <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
-            class="form-control border-0 bg-light">
-          <div class="input-group-append">
-            <button id="searchBtn" type="submit" class="btn btn-link text-primary"><i class="fa fa-search"></i></button>
+  <form>
+    <div class="row p-5 bg-dark">
+      <div class="col-2 col-md-4 bg-dark"></div>
+      <div class="col-8 col-md-4 bg-dark">
+        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4 mt-3 w-auto">
+          <div class="input-group ml-1">
+            <input id="searchInput" type="search" placeholder="search" aria-describedby="searchBtn"
+              class="form-control border-0 bg-light">
+            <div class="input-group-append">
+              <button id="searchBtn" type="submit" class="btn btn-link text-primary searchBtn" data-search="search"><i class="fa fa-search"></i></button>
+            </div>
           </div>
         </div>
       </div>
+      <div class="col-2 col-md-4 bg-dark"></div>
     </div>
-    <div class="col-2 col-md-4 bg-dark"></div>
-  </div>
+  </form>
+
 
   <!-- Article Cards -->
   <div class="artcard" class="container">
