@@ -90,7 +90,6 @@ const getSports = sports => {
     fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
         .then(r => r.json())
         .then(({ articles }) => {
-            // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
@@ -121,7 +120,6 @@ const getHealthArticles = health => {
     fetch(`https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=health&apiKey=152c8213a425472a94f4e747aae707b0`)
         .then(r => r.json())
         .then(({ articles }) => {
-            // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML = `
@@ -153,7 +151,6 @@ const getPolitics = politics => {
 
         .then(r => r.json())
         .then(({ articles }) => {
-            // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
@@ -183,6 +180,7 @@ getPolitics()
 // Search Results
 document.getElementById(`searchBtn`).addEventListener(`click`, e => {
     e.preventDefault()
+
     //Grab the users search
     let userSearch = document.getElementById(`searchInput`).value
     console.log(userSearch)
@@ -194,6 +192,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
         fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
             .then(r => r.json())
             .then(({ articles }) => {
+                document.getElementById(`searchArticles`).innerHTML = ``
                 articles.forEach(article => {
                     let articleElem = document.createElement('div')
                     articleElem.innerHTML =
@@ -215,7 +214,6 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
                         `
                     document.getElementById(`searchArticles`).append(articleElem)
                 })
-
             })
             .catch(e => console.log(e))
     }
