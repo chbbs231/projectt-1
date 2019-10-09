@@ -70,7 +70,7 @@ const getSports = sports => {
 }
 
 const getSportArt = article => {
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {

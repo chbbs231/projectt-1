@@ -60,18 +60,18 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
 // change second line (q=Apple) to say either health, sports, or politics
 
 // to get top news for home page
-const url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
-    'apiKey=152c8213a425472a94f4e747aae707b0';
+var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=us&' +
+          'apiKey=152c8213a425472a94f4e747aae707b0';
 var req = new Request(url);
 fetch(req)
-    .then(function (response) {
+    .then(function(response) {
         console.log(response.json());
     })
 
 const getArticles = article => {
 
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {

@@ -55,11 +55,7 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
 
 // to get politics articles
 const getPolitics = politics => {
-    var url = 'https://newsapi.org/v2/everything?' +
-        'q=Politics&' +
-        'from=2019-10-04&' +
-        'sortBy=popularity&' +
-        'apiKey=152c8213a425472a94f4e747aae707b0';
+    var url = 'https://newsapi.org/v2/everything?q=Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0';
     var req = new Request(url);
     fetch(req)
         .then(function (response) {
@@ -68,7 +64,7 @@ const getPolitics = politics => {
 }
 
 const poliArt = article => {
-    fetch(`https://newsapi.org/v2/everything?q=${article}&from=2019-10-05&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
+    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
@@ -76,8 +72,7 @@ const poliArt = article => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
-                `
-                <div class= "outer" class="card border-light mb-3">
+                ` <div class= "outer" class="card border-light mb-3">
                   <div class= "inner" class="card-header">${article.title}</div>
                   <div class="card-body">
                   <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
