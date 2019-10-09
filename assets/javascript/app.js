@@ -55,44 +55,129 @@ document.getElementById(`signOut`).addEventListener(`click`, e => {
 
 // Incorporating NEWS API 
 //Tested with postman
-// change second line (q=Apple) to say either health, sports, or politics
 
 // to get top news for home page
-var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-          'apiKey=152c8213a425472a94f4e747aae707b0';
-var req = new Request(url);
-fetch(req)
-    .then(function(response) {
-        console.log(response.json());
-    })
-
 const getArticles = article => {
-
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=152c8213a425472a94f4e747aae707b0`)
+        .then(r => r.json())
+        .then(({ articles }) => {
+            articles.forEach(article => {
+                let articleElem = document.createElement('div')
+                articleElem.innerHTML = `
+                        <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                <img src="${article.urlToImage}" class="card-img" style="height: 200px; width: 345px;" alt="${article.title}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${article.title}</h5>
+                                        <p class="card-text">${article.description}.</p>
+                                        <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                document.getElementById('display').append(articleElem)
+            })
+        })
+}
+getArticles()
 
+//Sports Page Results
+const getSports = sports => {
+    fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=152c8213a425472a94f4e747aae707b0`)
+        .then(r => r.json())
+        .then(({ articles }) => {
+            // what happens to HTML after search
+            articles.forEach(article => {
+                let articleElem = document.createElement('div')
+                articleElem.innerHTML =
+                    `
+                        <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                <img src="${article.urlToImage}" class="card-img" style="height: 200px; width: 340px;" alt="${article.title}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${article.title}</h5>
+                                        <p class="card-text">${article.description}.</p>
+                                        <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                document.getElementById('sportart').append(articleElem)
+            })
+        })
+}
+getSports()
+
+//Health Page Results
+const getHealthArticles = health => {
+    fetch(`https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=health&apiKey=152c8213a425472a94f4e747aae707b0`)
         .then(r => r.json())
         .then(({ articles }) => {
             // what happens to HTML after search
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML = `
-                <div class= "outer" class="card border-light mb-3">
-                  <div class="inner" class="card-header">${article.title}</div>
-                  <div class="card-body">
-                  <img class="imgcard"src="${article.urlToImage}" class="card-img-top" style="height: 100px" alt="${article.title}"
-                   <span><p> <h5 class="card-title">${article.author}</h5></p></span>
-                    <p class="card-text">${article.content}</p>
-                    <button type="rmbutton" class="btn btn-primary btn-sm">Read more</button>
-                  </div>
-                </div>
-                        `
-                document.getElementById('display').append(articleElem)
+                        <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                <img src="${article.urlToImage}" class="card-img" style="height: 200px; width: 340px;" alt="${article.title}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${article.title}</h5>
+                                        <p class="card-text">${article.description}.</p>
+                                        <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                `
+                document.getElementById('hdisplay').append(articleElem)
             })
         })
 }
+getHealthArticles()
 
-getArticles()
+
+//Politics Page Results
+const getPolitics = politics => {
+    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-06&sortBy=popularity&apiKey=152c8213a425472a94f4e747aae707b0`)
+
+        .then(r => r.json())
+        .then(({ articles }) => {
+            // what happens to HTML after search
+            articles.forEach(article => {
+                let articleElem = document.createElement('div')
+                articleElem.innerHTML =
+                    ` 
+                        <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                <img src="${article.urlToImage}" class="card-img" style="height: 200px; width: 340px;" alt="${article.title}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${article.title}</h5>
+                                        <p class="card-text">${article.description}.</p>
+                                        <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                document.getElementById('politicsart').append(articleElem)
+            })
+        })
+}
+getPolitics()
 
 
 // Search Results
@@ -112,14 +197,20 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
                 articles.forEach(article => {
                     let articleElem = document.createElement('div')
                     articleElem.innerHTML =
-                        ` <div class="card border-light mb-3">
-                            <div class="card-header">${article.title}</div>
-                            <div class="card-body">
-                            <img src="${article.urlToImage}" class="card-img-top" style="height: 150px;" alt="${article.title}"
-                                <h5 class="card-title">${article.author}</h5>
-                                <p class="card-text">${article.content}</p>
-                                <button type="button" class="btn btn-primary btn-sm">Read More</button>
-                            </div>
+                        ` 
+                        <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                <img src="${article.urlToImage}" class="card-img" style="height: 200px; width: 340px;" alt="${article.title}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                        <h5 class="card-title">${article.title}</h5>
+                                        <p class="card-text">${article.description}.</p>
+                                        <button type="button" class="btn btn-primary btn-sm">Read More</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         `
                     document.getElementById(`searchArticles`).append(articleElem)
