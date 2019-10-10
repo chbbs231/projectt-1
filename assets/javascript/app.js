@@ -96,8 +96,6 @@ const getArticles = article => {
 
                                     <div class="modal-body">
                                         ${article.content}
-                                        <br><br>
-                                        <h6><i>Purchase News API Business for full article</i><h6>
                                     </div>
 
                                     <div class="modal-footer">
@@ -158,8 +156,6 @@ const getSports = sports => {
 
                                     <div class="modal-body">
                                         ${article.content}
-                                        <br><br>
-                                        <h6><i>Purchase News API Business for full article</i><h6>
                                     </div>
 
                                     <div class="modal-footer">
@@ -220,8 +216,6 @@ const getHealthArticles = health => {
 
                                     <div class="modal-body">
                                         ${article.content}
-                                        <br><br>
-                                        <h6><i>Purchase News API Business for full article</i><h6>
                                     </div>
 
                                     <div class="modal-footer">
@@ -284,8 +278,6 @@ const getPolitics = politics => {
 
                                     <div class="modal-body">
                                         ${article.content}
-                                        <br><br>
-                                        <h6><i>Purchase News API Business for full article</i><h6>
                                     </div>
 
                                     <div class="modal-footer">
@@ -358,8 +350,6 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
     
                                         <div class="modal-body">
                                         ${article.content}
-                                        <br><br>
-                                        <h6><i>Purchase News API Business for full article</i><h6>
                                     </div>
 
                                         <div class="modal-footer">
