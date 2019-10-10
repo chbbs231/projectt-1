@@ -3,21 +3,21 @@
 Get Breaking News, top headlines and more!
 
 
-Deployment:
+<h3>Deployment:</h3>
 
 https://chbbs231.github.io/projectt-1/
 
 
-Built With:
+<h3>Built With:</h3>
 
 HTML, CSS, JavaScript, Bootstrap, News API, Firebase
 
 
-Authors:
+<h3>Authors:</h3>
 
 Kamlesh, Michelle, Mercedes, Arturo
 
 
-Acknowledgments:
+<h3>Acknowledgments:</h3>
 
 Powered By News API
