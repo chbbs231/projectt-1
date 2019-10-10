@@ -1,10 +1,10 @@
 // Firebase Configuration
 const config = {
-    apiKey: '63ed6db340cb46dfb7c3745d5a42a3c0',
+    apiKey: 'AIzaSyC1U8sQWVOz6FkYyxtNCBSRl8XDNZY24ao',
     authDomain: 'projectonebam.firebaseapp.com',
     databaseURL: 'https://projectonebam.firebaseio.com',
     projectId: 'projectonebam',
-    storageBucket: '',
+    storageBucket: 'projectonebam.appspot.com',
     messagingSenderId: '414001198345',
     appId: '1:414001198345:web:101af6fb28d538d95e0fd8',
     measurementId: 'G-MR21YKQQ59'
@@ -63,8 +63,8 @@ const getArticles = article => {
         .then(({ articles }) => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
-                articleElem.innerHTML = 
-                ` 
+                articleElem.innerHTML =
+                    ` 
                 <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
                     <div class="row no-gutters">
                         <div class="col-md-6">
@@ -75,7 +75,7 @@ const getArticles = article => {
                                 <h5 class="card-title">${article.title}</h5>
                                 <p class="card-text">${article.description}.</p>
                                 
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readMoreModal">
+                                <button type="button" class="btn btn-primary navColor" data-toggle="modal" data-target="#readMoreModal">
                                 Read More
                                 </button>
 
@@ -101,7 +101,8 @@ const getArticles = article => {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <p class="card-text"><small class="text-primary">UPGRADE YOUR ACCOUNT TO READ  THE FULL ARTICLE!</small></p>
+                                        <button type="button" class="btn btn-secondary navColor" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
@@ -125,7 +126,7 @@ const getSports = sports => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
-                ` 
+                    ` 
                 <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
                     <div class="row no-gutters">
                         <div class="col-md-6">
@@ -136,7 +137,7 @@ const getSports = sports => {
                                 <h5 class="card-title">${article.title}</h5>
                                 <p class="card-text">${article.description}.</p>
                                 
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readMoreModal">
+                                <button type="button" class="btn btn-primary navColor" data-toggle="modal" data-target="#readMoreModal">
                                 Read More
                                 </button>
 
@@ -162,7 +163,8 @@ const getSports = sports => {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <p class="card-text"><small class="text-primary">UPGRADE YOUR ACCOUNT TO READ  THE FULL ARTICLE!</small></p>
+                                        <button type="button" class="btn btn-secondary navColor" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
@@ -185,8 +187,8 @@ const getHealthArticles = health => {
         .then(({ articles }) => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
-                articleElem.innerHTML = 
-                ` 
+                articleElem.innerHTML =
+                    ` 
                 <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
                     <div class="row no-gutters">
                         <div class="col-md-6">
@@ -197,7 +199,7 @@ const getHealthArticles = health => {
                                 <h5 class="card-title">${article.title}</h5>
                                 <p class="card-text">${article.description}.</p>
                                 
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readMoreModal">
+                                <button type="button" class="btn btn-primary navColor" data-toggle="modal" data-target="#readMoreModal">
                                 Read More
                                 </button>
 
@@ -223,7 +225,8 @@ const getHealthArticles = health => {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <p class="card-text"><small class="text-primary">UPGRADE YOUR ACCOUNT TO READ  THE FULL ARTICLE!</small></p>
+                                        <button type="button" class="btn btn-secondary navColor" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
@@ -249,7 +252,7 @@ const getPolitics = politics => {
             articles.forEach(article => {
                 let articleElem = document.createElement('div')
                 articleElem.innerHTML =
-                ` 
+                    ` 
                 <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
                     <div class="row no-gutters">
                         <div class="col-md-6">
@@ -260,7 +263,7 @@ const getPolitics = politics => {
                                 <h5 class="card-title">${article.title}</h5>
                                 <p class="card-text">${article.description}.</p>
                                 
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readMoreModal">
+                                <button type="button" class="btn btn-primary navColor" data-toggle="modal" data-target="#readMoreModal">
                                 Read More
                                 </button>
 
@@ -286,7 +289,8 @@ const getPolitics = politics => {
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                     <p class="card-text"><small class="text-primary">UPGRADE YOUR ACCOUNT TO READ  THE FULL ARTICLE!</small></p>
+                                        <button type="button" class="btn btn-secondary navColor" data-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
@@ -322,7 +326,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
                 articles.forEach(article => {
                     let articleElem = document.createElement('div')
                     articleElem.innerHTML =
-                    ` 
+                        ` 
                     <div class="card mb-2 border-0 bg-light" style="max-width: auto;" >
                         <div class="row no-gutters">
                             <div class="col-md-6">
@@ -333,7 +337,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
                                     <h5 class="card-title">${article.title}</h5>
                                     <p class="card-text">${article.description}.</p>
                                     
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#readMoreModal">
+                                    <button type="button" class="btn btn-primary navColor" data-toggle="modal" data-target="#readMoreModal">
                                     Read More
                                     </button>
     
@@ -359,7 +363,8 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
                                     </div>
 
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <p class="card-text"><small class="text-primary">UPGRADE YOUR ACCOUNT TO READ  THE FULL ARTICLE!</small></p>
+                                            <button type="button" class="btn btn-secondary navColor" data-dismiss="modal">Close</button>
                                         </div>
                                         </div>
                                     </div>
