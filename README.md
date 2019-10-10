@@ -1,4 +1,4 @@
-BAM 
+<h1>BAM</h1>
 
 Get Breaking News, top headlines and more!
 
