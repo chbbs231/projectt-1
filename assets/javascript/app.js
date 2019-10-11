@@ -118,7 +118,7 @@ getArticles()
 
 //Sports Page Results
 const getSports = sports => {
-    fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-06&sortBy=sports&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
+    fetch(`https://newsapi.org/v2/everything?q=Sports&from=2019-10-09&sortBy=sports&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
         .then(r => r.json())
         .then(({ articles }) => {
             articles.forEach(article => {
@@ -178,7 +178,7 @@ getSports()
 
 //Health Page Results
 const getHealthArticles = health => {
-    fetch(`https://newsapi.org/v2/everything?q=Health&from=2019-10-04&sortBy=health&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
+    fetch(`https://newsapi.org/v2/everything?q=Health&from=2019-10-09&sortBy=health&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
         .then(r => r.json())
         .then(({ articles }) => {
             articles.forEach(article => {
@@ -239,7 +239,7 @@ getHealthArticles()
 
 //Politics Page Results
 const getPolitics = politics => {
-    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-06&sortBy=popularity&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
+    fetch(`https://newsapi.org/v2/everything?q=Politics&from=2019-10-09&sortBy=popularity&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
 
         .then(r => r.json())
         .then(({ articles }) => {
@@ -311,7 +311,7 @@ document.getElementById(`searchBtn`).addEventListener(`click`, e => {
 
     const getSearch = search => {
         //Get the search content from the API
-        fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-05&sortBy=popularity&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
+        fetch(`https://newsapi.org/v2/everything?q=${userSearch}&from=2019-10-09&sortBy=popularity&apiKey=63ed6db340cb46dfb7c3745d5a42a3c0`)
             .then(r => r.json())
             .then(({ articles }) => {
                 document.getElementById(`searchArticles`).innerHTML = ``
